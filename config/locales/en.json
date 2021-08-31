@@ -1,0 +1,55 @@
+{
+    "translate":{
+        "home": {
+            "formLogin": {
+                "title": "Login",
+                "login": "Usuario",
+                "password": "Senha",
+                "button": "Enviar",
+                "register": "Registrar"
+            },
+            "formRegister": {
+                "title": "Registrar",
+                "button": "Registrar",
+                "toLogin": "Logar"
+            }
+        },
+        "login": {
+            "success": "Logado com sucesso!",
+            "error": "Usuário ou senha inválidos!"
+        },
+        "user": {
+            "navbar": {
+                "dashboard": "Dashboard",
+                "categories": "Categorias",
+                "stamps": "Marcas",
+                "products": "Produtos",
+                "acount": "Minha conta",
+                "layouts": "Layouts",
+                "logout": "Logout"
+            }
+        },
+        "models":{
+            "user": {
+                "login": "Usuario",
+                "email": "Email",
+                "password": "Senha",
+                "passwordConfirmation": "Verificar senha",
+                "info": {
+                    "name": "Nome",
+                    "birth": "Nascimento",
+                    "cpf_cnpj": ["CPF", "CNPJ"],
+                    "documentType": "Dipo de Documento",
+                    "address": {
+                        "street": "Logradouro",
+                        "district": "Bairro",
+                        "city": "Cidade",
+                        "state": "Estado",
+                        "zipcode": "CEP",
+                        "country": "País"
+                    }
+                }
+            }
+        }
+    }
+}

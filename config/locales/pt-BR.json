@@ -1,0 +1,99 @@
+{
+    "translate":{
+        "titles": {
+            "category":{
+                "new": "Nova Categoria",
+                "edit": "Editar Categoria",
+                "show": "Categoria",
+                "index": "Categorias"
+            },
+            "content":{
+                "new": "Novo Conteúdo",
+                "edit": "Editar Conteúdo",
+                "show": "Conteúdo",
+                "index": "Conteúdos"
+            }
+        },
+        "buttons":{
+            "back": "Voltar",
+            "register": "Registrar",
+            "login": "Entrar",
+            "create": "Criar",
+            "update": "Atualizar",
+            "new": "Novo",
+            "new_a": "Nova",
+            "edit": "Editar",
+            "save": "Salvar",
+            "cancel": "Cancelar"
+        },
+        "home": {
+            "formLogin": {
+                "title": "Login",
+                "login": "Usuario",
+                "password": "Senha",
+                "button": "Enviar",
+                "register": "Registrar"
+            },
+            "formRegister": {
+                "title": "Registrar",
+                "button": "Registrar",
+                "toLogin": "Logar"
+            }
+        },
+        "login": {
+            "success": "Logado com sucesso!",
+            "error": "Usuário ou senha inválidos!"
+        },
+        "user": {
+            "navbar": {
+                "dashboard": "Dashboard",
+                "categories": "Categorias",
+                "contents": "Conteúdos",
+                "acount": "Minha conta",
+                "logout": "Logout"
+            }
+        },
+        "models":{
+            "names": {
+                "category": "Categoria",
+                "content": "Conteúdo",
+                "user": "Usuário"
+            },
+            "user": {
+                "login": "Usuario",
+                "email": "Email",
+                "password": "Senha",
+                "passwordConfirmation": "Verificar senha",
+                "createDate": "Data de criação",
+                "loginHistory": {
+                    "date": "Data",
+                    "userAgent": "User agent",
+                    "ip": "IP"
+                },
+                "info": {
+                    "name": "Nome"
+                }
+            },
+            "content": {
+                "name": "Nome",
+                "slug": "Slug",
+                "author": "Autor",
+                "publishDate": "Data de publicação",
+                "visible": "Visível",
+                "complete": "Completo",
+                "type": "Tipo",
+                "chapters": "Capítulos",
+                "description": "Descrição",
+                "categories": "Categorias",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização"
+            },
+            "category":{
+                "name": "Nome",
+                "description": "Descrição",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização"
+            }
+        }
+    }
+}
