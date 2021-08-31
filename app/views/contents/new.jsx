@@ -12,18 +12,14 @@ class New extends Component {
 
     render() {
         let content = this.props.content
-        let stamps = this.props.stamps
         let categories = this.props.categories
-        let layouts = this.props.layouts
 
         return (
             <render dest="#container">
                 <content>
                     <Form t={this.props.t} user={this.props.user}
                         content={content}
-                        stamps={stamps}
                         categories={categories}
-                        layouts={layouts}
                         url={"/u/content/"}
                         method={"POST"}
                         title={this.props.t.titles.content.new} />
