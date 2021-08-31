@@ -14,6 +14,7 @@ class Index extends Component{
     constructor(props){
         super(props)
         this.props = props
+        this.user = this.props.session.user
     }
 
     render() {
@@ -27,11 +28,27 @@ class Index extends Component{
         ]
 
         let loginMessage = {text: "Lorem", icon: "success"}
+        let menuItem = null
+        if(this.user)
+            menuItem = <a className="text-right" href="/u/logout" method="POST">{this.props.t.home.menu.logout}</a>
+        else
+            menuItem = <a className="text-right" href="/login">{this.props.t.home.menu.login}</a>
+
         return(
             <render dest="#body">
                 <content>
                     <Header>
-                        <h1>Lorem</h1>
+                        <section className="topbar">
+                            <ul className="menu horizontal">
+                                <li className="menu-item"><a className="text-left" href="/home">{this.props.t.home.menu.page}</a></li>
+                                <li className="menu-item"><a className="tex-center" href="/c/anime"><span>{this.props.t.home.menu.animes}</span></a></li>
+                                <li className="menu-item"><a className="text-center" href="/c/manga"><span>{this.props.t.home.menu.mangas}</span></a></li>
+                                <li className="menu-item"><a className="text-center" href="/c/serie"><span>{this.props.t.home.menu.series}</span></a></li>
+                                <li className="menu-item"><a className="text-center" href="/c/film"><span>{this.props.t.home.menu.films}</span></a></li>
+                                <li className="menu-item"><a className="text-center" href="/c/dorama"><span>{this.props.t.home.menu.doramas}</span></a></li>
+                                <li className="menu-item">{menuItem}</li>
+                            </ul>
+                        </section>
                     </Header>
                     <main>
                         <div className="container">
@@ -59,7 +76,7 @@ class Index extends Component{
                         <strong>Lorem</strong>
                     </Footer>
                 </content>
-                <Render templateUrl="/login" />
+                {/* <Render templateUrl="/login" /> */}
             </render>
         )
     }

@@ -24,18 +24,12 @@ class Index extends Component {
                         <h1>Lorem</h1>
                         <p><strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, modi ex, sequi dicta autem porro aliquam, omnis eos quis corrupti accusantium quasi quia molestias aut laborum vel rem id veritatis.</strong></p>
                     </Header>
-                    <main>
+                    <main id="dashboard">
                         <div className="container">
-                            <div className="row">
-                                <div className="column column-25">
-                                    <Navbar t={this.props.t.user.navbar}></Navbar>
-                                </div>
-                                <div className="column column-75">
-                                    <div id="container">
-                                        <div className="row">
-                                            <div className="column"></div>
-                                        </div>
-                                    </div>
+                            <Navbar t={this.props.t.user.navbar}></Navbar>
+                            <div id="container">
+                                <div className="row">
+                                    <div className="column"></div>
                                 </div>
                             </div>
                         </div>

@@ -32,6 +32,7 @@ const USER_SCHEMA = new Schema({
     login: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
+    is_admin: {type: Boolean, required: true, default: false},
     info: {
         name: {type: String, required: true},
         birth: {type: Date},

@@ -45,7 +45,7 @@ class Show extends Component {
                         <div className="row">
                             <div className="column column-25">
                                 <label htmlFor="">{this.props.t.models.content.type}</label>
-                                <p className="input">{content.type}</p>
+                                <p className="input">{this.props.t.models.content.types[content.type]}</p>
                             </div>
                             <div className="column column-25">
                                 <label htmlFor="">{this.props.t.models.content.author}</label>

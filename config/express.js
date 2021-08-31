@@ -24,5 +24,6 @@ server.engine('jsx', createEngine())
 
 server.use(routes.noAuthRoutes)
 server.use(routes.userRoutes)
+server.use(routes.freeRoutes)
 
 module.exports = server

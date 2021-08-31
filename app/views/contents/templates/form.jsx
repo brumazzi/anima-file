@@ -24,6 +24,13 @@ class Form extends Component {
         let content = this.props.content || {}
         let selectCategories = []
         let selectedItems = content.categories || []
+        let contentTypes = [
+            {value: 'anime', label: this.props.t.models.content.types.anime},
+            {value: 'manga', label: this.props.t.models.content.types.manga},
+            {value: 'film', label: this.props.t.models.content.types.film},
+            {value: 'serie', label: this.props.t.models.content.types.serie},
+            {value: 'dorama', label: this.props.t.models.content.types.dorama},
+        ]
         for(let i=0; i<this.props.categories.length; i+=1){
             let category = this.props.categories[i]
             selectCategories.push({label: category.name, value: category._id, title: category.description})
@@ -55,7 +62,7 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="column column-25">
-                                <Text id="content-type" type="text" name="content.type" value={content.type}>{this.props.t.models.content.type}</Text>
+                                <Select id="content-type" type="text" name="content.type" items={contentTypes} selected={content.type}>{this.props.t.models.content.type}</Select>
                             </div>
                             <div className="column column-25">
                                 <Text id="content-author" type="text" name="content.author" value={content.author}>{this.props.t.models.content.author}</Text>

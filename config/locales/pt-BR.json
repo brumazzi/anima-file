@@ -38,6 +38,16 @@
                 "title": "Registrar",
                 "button": "Registrar",
                 "toLogin": "Logar"
+            },
+            "menu": {
+                "animes": "Animes",
+                "mangas": "Mangas",
+                "series": "Séries",
+                "films": "Filmes",
+                "doramas": "Doramas",
+                "page": "AnimaFile",
+                "login": "Entrar",
+                "logout": "Logout"
             }
         },
         "login": {
@@ -82,6 +92,13 @@
                 "visible": "Visível",
                 "complete": "Completo",
                 "type": "Tipo",
+                "types": {
+                    "anime": "Anime",
+                    "manga": "Manga",
+                    "film": "Filme",
+                    "serie": "Série",
+                    "dorama": "Dorama"
+                },
                 "chapters": "Capítulos",
                 "description": "Descrição",
                 "categories": "Categorias",

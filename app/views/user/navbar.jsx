@@ -12,7 +12,7 @@ class Navbar extends Component{
 
     render() {
         return(
-            <nav className="navbar">
+            <nav className="navbar" id="navbar">
                 <ul className="nav-list">
                     <li className="nav-item">
                         <a href="/u/dashboard" className="nav-link button">

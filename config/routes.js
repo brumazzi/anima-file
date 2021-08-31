@@ -4,18 +4,21 @@ const Controllers = require('../libs/controller')
 
 let noAuthRoutes = new Express.Router()
 let userRoutes = new Express.Router()
-
+let freeRoutes = new Express.Router()
 
 noAuthRoutes.use('/login/', Midware.onlyJSON, Midware.isUserNoAuthenticated)
 noAuthRoutes.use('/register/', Midware.onlyJSON, Midware.isUserNoAuthenticated)
 
 noAuthRoutes.get('/', (req, res)=>{res.render('templates/base', {t: res.__('translate')})})
 noAuthRoutes.get('/home', Controllers.Home.index)
+
 noAuthRoutes.get('/login', Controllers.Home.login)
 noAuthRoutes.get('/register', Controllers.Home.register)
-
 noAuthRoutes.post('/login', Midware.userAuthenticate)
 noAuthRoutes.post('/register', Midware.userRegistrate)
+
+noAuthRoutes.get('/c/:type', Controllers.Content.view)
+// noAuthRoutes.get(/\/c\/.+/, (req, res)=>{res.send(`<render dest="#none"><script type="text/javascript" command="alert({title: 'Página em construção', icon: 'error'})" /></render>`)})
 
 userRoutes.use(/\/u?.+/, Midware.onlyJSON, Midware.isUserAuthenticated)
 userRoutes.get('/u/', Controllers.User.index)
@@ -42,4 +45,5 @@ userRoutes.post('/u/logout', Midware.userLogout)
 module.exports = {
     noAuthRoutes: noAuthRoutes,
     userRoutes: userRoutes,
+    freeRoutes: freeRoutes
 }
