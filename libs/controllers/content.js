@@ -35,7 +35,7 @@ module.exports = {
         })
     },
     create: async (req, res) => {
-        req.body.content.user = req.session.user._id
+        req.body.content.categories.splice(0,1)
         let content = new ContentModel(req.body.content)
 
         content.save((err, content)=>{
@@ -45,6 +45,8 @@ module.exports = {
     },
     update: async (req, res) => {
         req.body.content.updateDate = new Date()
+        req.body.content.categories.splice(0,1)
+
         ContentModel.findOneAndUpdate({ _id: req.params._id }, req.body.content, (err, content)=>{
             req.body.content.updateDate = new Date()
             if(err) res.render('contents/edit', { t: res.__('translate'), session: req.session, content: content, message: "Lorem"})
@@ -53,8 +55,10 @@ module.exports = {
     },
     show: async (req, res) => {
         ContentModel.findOne({ _id: req.params._id }, async (err, content)=>{
-            // let category = await CategoryModel.findOne({_id: content.category}).exec()
-            res.render('contents/show', { t: res.__('translate'), session: req.session, content: content, category: 'category' })
+            let categories = []
+            if(content.categories.length > 0)
+                categories = await CategoryModel.find({_id: content.categories})
+            res.render('contents/show', { t: res.__('translate'), session: req.session, content: content, categories: categories })
         })
     },
     view: async (req, res) => {

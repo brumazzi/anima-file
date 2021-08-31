@@ -10,6 +10,11 @@ class Show extends Component {
 
     render() {
         let content = this.props.content
+        let categories = []
+        for(let i=0; i<this.props.categories.length; i+=1){
+            let category = this.props.categories[i]
+            categories.push( <span key={category._id} title={category.description} className="badge">{category.name}</span> )
+        }
 
         return (
             <render dest="#container">
@@ -68,7 +73,7 @@ class Show extends Component {
                         <div className="row">
                             <div className="column column-100">
                                 <label htmlFor="">{this.props.t.models.content.categories}</label>
-                                {/* <p className="input">{content.categories}</p> */}
+                                <p className="input">{categories}</p>
                             </div>
                             <div className="column column-100">
                                 <label htmlFor="">{this.props.t.models.content.description}</label>

@@ -23,7 +23,7 @@ const CONTENT_SCHEMA = new Schema({
     type: {type: String, required: true},
     chapters: {type: Number},
     description: {type: String},
-    // categories: [ObjectId],
+    categories: {type: Array},
     createDate: {type: Date, default: new Date()},
     updateDate: {type: Date, default: new Date()}
 })

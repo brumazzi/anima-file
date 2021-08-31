@@ -26,7 +26,7 @@ class Form extends Component {
         let selectedItems = content.categories || []
         for(let i=0; i<this.props.categories.length; i+=1){
             let category = this.props.categories[i]
-            selectCategories.push({label: category.name, value: category._id})
+            selectCategories.push({label: category.name, value: category._id, title: category.description})
         }
 
         return (
@@ -69,6 +69,7 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="column column-100">
+                                <input type="hidden" name="content.categories" value="[]" />
                                 <SelectLabel items={selectCategories} selected={selectedItems} id="content-categories" type="text" name="content.categories" value={content.categories}>{this.props.t.models.content.categories}</SelectLabel>
                             </div>
                         </div>

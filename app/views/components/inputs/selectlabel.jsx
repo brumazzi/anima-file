@@ -22,16 +22,16 @@ class SelectLabel extends Component {
                 let groupItems = new Array()
                 for (let j = 0; j < group.items.length; j += 1) {
                     if (this.props.selected.find(v => v == group.items[j].value))
-                        groupItems.push(<CheckLabel id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${group.items[j].value}]`} checked="1">{group.items[j].label}</CheckLabel>)
+                        groupItems.push(<CheckLabel title={item.title || ''} id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${group.items[j].value}]`} checked="1">{group.items[j].label}</CheckLabel>)
                     else
-                        groupItems.push(<CheckLabel id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${group.items[j].value}]`}>{group.items[j].label}</CheckLabel>)
+                        groupItems.push(<CheckLabel title={item.title || ''} id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${group.items[j].value}]`}>{group.items[j].label}</CheckLabel>)
                 }
                 selectOptions.push(<fieldset key={this.key++}><legend>{group.label}</legend>{groupItems}</fieldset>)
             } else {
                 if (this.props.selected.find(v => v == item.value))
-                    selectOptions.push(<CheckLabel id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${item.value}]`} checked="1">{item.label}</CheckLabel>)
+                    selectOptions.push(<CheckLabel title={item.title || ''} id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${item.value}]`} checked="1">{item.label}</CheckLabel>)
                 else
-                    selectOptions.push(<CheckLabel id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${item.value}]`}>{item.label}</CheckLabel>)
+                    selectOptions.push(<CheckLabel title={item.title || ''} id={`${this.props.id}-${this.key++}`} key={this.key++} name={`${this.props.name}`} value={`[${item.value}]`}>{item.label}</CheckLabel>)
             }
         }
 
