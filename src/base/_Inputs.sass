@@ -1,0 +1,42 @@
+/* personal checkbox and radio */
+label.circle span::before
+    border-radius: 100%
+label.rounded span::before
+    border-radius: 4px
+label.radio input, label.checkbox input, label.checklabel input
+    display: none
+label.radio span::before, label.checkbox span::before
+    content: ""
+    width: 22px
+    height: 22px
+    display: inline-block
+
+label.checklabel
+    display: inline-block
+    margin-right: 4px
+
+label.checkbox, label.radio, label.checklabel
+    cursor: pointer
+
+label.checklabel input + span
+    background-color: $color-secondary
+    padding: 2px 8px
+    border: solid 2px $color-border
+    border-radius: 8px
+    color: $color-text
+
+label.checklabel input:checked + span
+    background-color: $color-primary
+    color: $color-text
+
+label input:checked + span::before
+    background-color: $color-primary
+
+label.radio span::before, label.checkbox span::before
+    border: solid 3px $color-border
+
+label.radio span::before, label.checkbox span::before
+    border: solid 2px $color-border
+
+
+/* input layout */

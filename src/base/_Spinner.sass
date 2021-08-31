@@ -1,0 +1,21 @@
+body[data-spinner=true]::after, body[data-spinner=true]::before
+    content: ""
+    position: fixed
+    display: block
+    top: 0px
+    left: 0px
+    width: 100vw
+    height: 100vh
+    z-index: 1000
+    background-color: $color-spiner
+
+
+body[data-spinner=true]::before
+    top: 30vh
+    left: 40vw
+    width: 20vw
+    height: 15vw
+    z-index: 1001
+    background-image: url($spinner-imagem)
+    background-size: 20vw
+    background-repeat: no-repeat
