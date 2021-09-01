@@ -8,7 +8,7 @@ function sendRedirect(templateUrl="", message=null){return `<render dest="#none"
 module.exports = {
     isUserAuthenticated: async (req, res, next) => {
         if(req.session.user) next()
-        else res.send(sendRedirect('/home'))
+        else res.send(sendRedirect('/login'))
     },
     isUserNoAuthenticated: async (req, res, next) => {
         if(!req.session.user) next()
@@ -19,7 +19,7 @@ module.exports = {
         let user = await User.findOne({login: req.body.login}).exec()
         if(user && bcrypt.compareSync(password, user.password)){
             req.session.user = user
-            res.send(sendRedirect('/u/'))
+            res.send(sendRedirect('/home/'))
         }else res.send(sendError('Usuário ou senha inválidos'))
     },
     userRegistrate: async (req, res, next) => {

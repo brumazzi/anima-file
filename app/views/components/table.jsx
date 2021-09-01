@@ -39,11 +39,11 @@ class Table extends Component{
 
         return(
             <table>
-                <thread>
+                <thead>
                     <tr>
                         {(legend || fields || []).map((value)=>{return(<th key={value}>{value}</th>)})}
                     </tr>
-                </thread>
+                </thead>
                 <tbody>
                     {items}
                 </tbody>

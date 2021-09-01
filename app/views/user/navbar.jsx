@@ -30,8 +30,8 @@ class Navbar extends Component{
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="/u/acount" className="nav-link button">
-                            <FontAwesomeIcon icon={faIdCard} width="1.5rem"/> {this.props.t.acount}
+                        <a href="/u/account" className="nav-link button">
+                            <FontAwesomeIcon icon={faIdCard} width="1.5rem"/> {this.props.t.account}
                         </a>
                     </li>
                     <li className="nav-item">

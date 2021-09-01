@@ -65,6 +65,13 @@ function requestPage(method, url, data={}) {
     httpRequest.setRequestHeader('Content-Type', 'application/json');
     httpRequest.send(JSON.stringify(data));
 
+    if(method == "GET"){
+        localStorage.setItem('lastURL', JSON.stringify({
+            method: method,
+            url: url
+        }));
+    }
+
     var interval = setInterval(function(){
         httpRequest.abort();
         clearInterval(interval);
@@ -158,5 +165,12 @@ window.addEventListener("load", function(){
     for(var i=0; i<forms.length; i+=1) formAddSubmitEvent(forms[i]);
     for(var i=0; i<scripts.length; i+=1) scriptCall(scripts[i]);
 
-    requestPage("get", "/home");
+    // var lastURL = JSON.parse(localStorage.getItem('lastURL'));
+    // if(lastURL)
+    //     requestPage(lastURL.method, lastURL.url);
+    // else{
+        var render = document.getElementsByName("render")[0];
+        requestPage(render.getAttribute('method'), render.getAttribute('url'));
+    // }
+
 });

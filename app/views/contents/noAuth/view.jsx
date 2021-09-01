@@ -9,12 +9,13 @@ class New extends Component {
     }
 
     render() {
-        let content = this.props.content
+        let contents = this.props.contents
         let categories = this.props.categories
 
         return (
-            <render dest="#container">
+            <render dest=".container">
                 <content>
+                    <h1>XXXXXXXXXXX</h1>
                 </content>
             </render>
         )

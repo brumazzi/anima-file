@@ -14,6 +14,12 @@ class Index extends Component{
     }
 
     render() {
+        let t = this.props.t.models.content
+        let contents = this.props.contents
+        for(let i=0; i<contents.length; i+=1){
+            contents[i].typeString = this.props.t.models.content.types[contents[i].type]
+        }
+
         return(
             <render dest="#container">
                 <content>
@@ -28,9 +34,9 @@ class Index extends Component{
                     <div className="row">
                         <div className="column">
                             <Table
-                                legend={['Nome']}
-                                fields={['name']}
-                                data={this.props.contents}
+                                legend={[t.name, t.type, t.chapters, t.publishDate, t.complete]}
+                                fields={['name', 'typeString', 'chapters', 'publishDate.toLocaleString().slice(0,10)', 'complete ? "Sim" : "Não"']}
+                                data={contents}
                                 link="/u/content/:_id"
                                 linkIndex="0"
                                 footer="Conteudo de rodapé"/>

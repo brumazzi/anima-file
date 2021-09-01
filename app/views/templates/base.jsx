@@ -1,6 +1,8 @@
 import React from 'react'
 import {Component} from 'react'
 
+import Render from './render'
+
 class Base extends Component{
     constructor(props){
         super(props)
@@ -12,6 +14,7 @@ class Base extends Component{
             <html lang={this.props.locale}>
                 <head>
                     <meta charSet="utf-8" />
+                    <meta name="render" url="/home" method="get"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <title>Teste</title>
                     <link rel="stylesheet" href="/css/milligram.css" crossOrigin="anonymous"/>
