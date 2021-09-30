@@ -14,31 +14,28 @@ class Form extends Component {
     render() {
         let category = this.props.category || {}
         return (
-            <render dest="#container">
-                <content>
+            <div className="d-flex row justify-content-center">
+                <div className="col-sm-12">
                     <form action={this.props.url} method={this.props.method}>
+                        <button className="d-none" id="form-submit"></button>
                         <div className="row">
-                            <div className="column">
+                            <div className="col">
                                 <h2>{this.props.title}</h2>
-                            </div>
-                            <div className="column">
-                                <a className="button button-outline" href={category._id ? `/u/category/${category._id}/` : '/u/categories/'}>{this.props.t.buttons.cancel}</a>
-                                <button className="button">{this.props.t.buttons.save}</button>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-50">
+                            <div className="col-sm-6">
                                 <Text id="category-name" type="text" name="category.name" value={category.name}>{this.props.t.models.category.name}</Text>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-100">
+                            <div className="col-sm-12">
                                 <Text id="category-description" type="text" name="category.description" value={category.description}>{this.props.t.models.category.description}</Text>
                             </div>
                         </div>
                     </form>
-                </content>
-            </render>
+                </div>
+            </div>
         )
     }
 }

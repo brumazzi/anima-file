@@ -8,6 +8,7 @@ module.exports = {
     },
     // TODO: Add user filters
 
+    Banner: require('./controllers/banner'),
     Category: require('./controllers/category'),
     Content: require('./controllers/content'),
     User: require('./controllers/user'),

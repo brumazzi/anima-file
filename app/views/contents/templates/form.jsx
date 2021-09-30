@@ -25,21 +25,22 @@ class Form extends Component {
         let selectCategories = []
         let selectedItems = content.categories || []
         let contentTypes = [
-            {value: 'anime', label: this.props.t.models.content.types.anime},
-            {value: 'manga', label: this.props.t.models.content.types.manga},
-            {value: 'film', label: this.props.t.models.content.types.film},
-            {value: 'serie', label: this.props.t.models.content.types.serie},
-            {value: 'dorama', label: this.props.t.models.content.types.dorama},
+            { value: 'anime', label: this.props.t.models.content.types.anime },
+            { value: 'manga', label: this.props.t.models.content.types.manga },
+            { value: 'film', label: this.props.t.models.content.types.film },
+            { value: 'serie', label: this.props.t.models.content.types.serie },
+            { value: 'dorama', label: this.props.t.models.content.types.dorama },
         ]
-        for(let i=0; i<this.props.categories.length; i+=1){
+        for (let i = 0; i < this.props.categories.length; i += 1) {
             let category = this.props.categories[i]
-            selectCategories.push({label: category.name, value: category._id, title: category.description})
+            selectCategories.push({ label: category.name, value: category._id, title: category.description })
         }
 
         return (
-            <render dest="#container">
-                <content>
+            <div className="d-flex row justify-content-center">
+                <div className="col-sm-12">
                     <form action={this.props.url} method={this.props.method}>
+                        <button className="d-none" id="form-submit"></button>
                         <div className="row">
                             <div className="column">
                                 <h2>{this.props.title}</h2>
@@ -50,44 +51,44 @@ class Form extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-50">
+                            <div className="col-sm-6">
                                 <Text id="content-name" type="text" name="content.name" value={content.name}>{this.props.t.models.content.name}</Text>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Checkbox checked={content.visible} id="content-visible" type="text" name="content.visible" value="1">{this.props.t.models.content.visible}</Checkbox>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Checkbox checked={content.complete} id="content-complete" type="text" name="content.complete" value="1">{this.props.t.models.content.complete}</Checkbox>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Select id="content-type" type="text" name="content.type" items={contentTypes} selected={content.type}>{this.props.t.models.content.type}</Select>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Text id="content-author" type="text" name="content.author" value={content.author}>{this.props.t.models.content.author}</Text>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Text id="content-publishDate" type="date" name="content.publishDate" value={this.toInputDate(content.publishDate)}>{this.props.t.models.content.publishDate}</Text>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3">
                                 <Text id="content-chapters" type="text" name="content.chapters" value={content.chapters}>{this.props.t.models.content.chapters}</Text>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-100">
+                            <div className="col-sm-6">
                                 <input type="hidden" name="content.categories" value="[]" />
                                 <SelectLabel items={selectCategories} selected={selectedItems} id="content-categories" type="text" name="content.categories" value={content.categories}>{this.props.t.models.content.categories}</SelectLabel>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-100">
+                            <div className="col-sm-6">
                                 <Text id="content-description" type="text" name="content.description" value={content.description}>{this.props.t.models.content.description}</Text>
                             </div>
                         </div>
                     </form>
-                </content>
-            </render>
+                </div>
+            </div>
         )
     }
 }

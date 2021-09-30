@@ -23,6 +23,13 @@ noAuthRoutes.get('/c/:type', Controllers.Content.view)
 userRoutes.use(/\/u?.+/, Midware.onlyJSON, Midware.isUserAuthenticated)
 userRoutes.get('/u/', Controllers.User.index)
 
+userRoutes.get('/u/banners', Controllers.Banner.index)
+userRoutes.get('/u/banner/new', Controllers.Banner.new)
+userRoutes.post('/u/banner/', Controllers.Banner.create)
+userRoutes.get('/u/banner/:_id', Controllers.Banner.show)
+userRoutes.get('/u/banner/:_id/edit', Controllers.Banner.edit)
+userRoutes.put('/u/banner/:_id', Controllers.Banner.update)
+
 userRoutes.get('/u/categories', Controllers.Category.index)
 userRoutes.get('/u/category/new', Controllers.Category.new)
 userRoutes.post('/u/category/', Controllers.Category.create)

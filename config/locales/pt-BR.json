@@ -1,6 +1,17 @@
 {
     "translate":{
+        "text": {
+            "title": "AnimaFile",
+            "yes": "Sim",
+            "no": "Não"
+        },
         "titles": {
+            "banner":{
+                "new": "Novo Banner",
+                "edit": "Editar Banner",
+                "show": "Banner",
+                "index": "Banners"
+            },
             "category":{
                 "new": "Nova Categoria",
                 "edit": "Editar Categoria",
@@ -24,7 +35,8 @@
             "new_a": "Nova",
             "edit": "Editar",
             "save": "Salvar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "logout": "Logout"
         },
         "home": {
             "formLogin": {
@@ -57,6 +69,7 @@
         "user": {
             "navbar": {
                 "dashboard": "Dashboard",
+                "banners": "Banners",
                 "categories": "Categorias",
                 "contents": "Conteúdos",
                 "account": "Minha conta",
@@ -65,24 +78,24 @@
         },
         "models":{
             "names": {
+                "banner": "Banner",
                 "category": "Categoria",
                 "content": "Conteúdo",
                 "user": "Usuário"
             },
-            "user": {
-                "login": "Usuario",
-                "email": "Email",
-                "password": "Senha",
-                "passwordConfirmation": "Verificar senha",
+            "banner":{
+                "title": "Titulo",
+                "image": "Capa",
+                "active": "Ativa",
+                "description": "Descrição",
                 "createDate": "Data de criação",
-                "loginHistory": {
-                    "date": "Data",
-                    "userAgent": "User agent",
-                    "ip": "IP"
-                },
-                "info": {
-                    "name": "Nome"
-                }
+                "updateDate": "Data de atualização"
+            },
+            "category":{
+                "name": "Nome",
+                "description": "Descrição",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização"
             },
             "content": {
                 "name": "Nome",
@@ -105,11 +118,20 @@
                 "createDate": "Data de criação",
                 "updateDate": "Data de atualização"
             },
-            "category":{
-                "name": "Nome",
-                "description": "Descrição",
+            "user": {
+                "login": "Usuario",
+                "email": "Email",
+                "password": "Senha",
+                "passwordConfirmation": "Verificar senha",
                 "createDate": "Data de criação",
-                "updateDate": "Data de atualização"
+                "loginHistory": {
+                    "date": "Data",
+                    "userAgent": "User agent",
+                    "ip": "IP"
+                },
+                "info": {
+                    "name": "Nome"
+                }
             }
         }
     }

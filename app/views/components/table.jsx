@@ -38,7 +38,7 @@ class Table extends Component{
         }
 
         return(
-            <table>
+            <table className="table table-striped gy-3 gs-7">
                 <thead>
                     <tr>
                         {(legend || fields || []).map((value)=>{return(<th key={value}>{value}</th>)})}

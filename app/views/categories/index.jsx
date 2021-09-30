@@ -4,7 +4,7 @@ import {Component} from 'react'
 import Table from '../components/table'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
+import {faArchive, faImage, faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
 
 class Index extends Component{
     constructor(props){
@@ -15,14 +15,11 @@ class Index extends Component{
 
     render() {
         return(
-            <render dest="#container">
-                <content>
+            <render>
+                <content dest="main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.category.index}</h2>
-                        </div>
-                        <div className="column">
-                            <a href="/u/category/new" className="button">{this.props.t.buttons.new_a} {this.props.t.models.names.category}</a>
                         </div>
                     </div>
                     <div className="row">
@@ -35,6 +32,16 @@ class Index extends Component{
                                 linkIndex="0"
                                 footer="Lorem ipsum"/>
                         </div>
+                    </div>
+                </content>
+                <content dest="#btnGroup">
+                    <div className="d-flex">
+                        <a href="/u/category/new" id="" className="btn btn-light-info btn-active-info ms-3">
+                            <FontAwesomeIcon icon={faArchive} width="1.5rem" /> {this.props.t.buttons.new_a} {this.props.t.models.names.category}
+                        </a>
+                        <a href="/u/logout" id="logout" method="POST" className="btn btn-danger ms-3">
+                            <FontAwesomeIcon icon={faSignOutAlt} width="1.5rem" /> {this.props.t.buttons.logout}
+                        </a>
                     </div>
                 </content>
             </render>

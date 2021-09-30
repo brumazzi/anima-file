@@ -1,3 +1,5 @@
+import { faPencilAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Component } from 'react'
 
@@ -11,36 +13,45 @@ class Show extends Component {
     render() {
         let category = this.props.category
         return (
-            <render dest="#container">
-                <content>
+            <render>
+                <content dest="main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.category.show}</h2>
                         </div>
-                        <div className="column">
-                            <a className="button button-outline" href={`/u/categories`}>{this.props.t.buttons.back}</a>
-                            <a className="button" href={`/u/category/${category._id}/edit`}>{this.props.t.buttons.edit}</a>
-                        </div>
                     </div>
                     <div className="row">
-                        <div className="column column-50">
+                        <div className="col-sm-6 form-group">
                             <label htmlFor="">{this.props.t.models.category.name}</label>
-                            <p>{category.name}</p>
+                            <p className="form-control">{category.name}</p>
                         </div>
-                        <div className="column column-25">
+                        <div className="col-sm-3 form-group">
                             <label htmlFor="">{this.props.t.models.category.createDate}</label>
-                            <p>{(category.createDate) ? category.createDate.toLocaleString() : "--/--/--- --:--"}</p>
+                            <p className="form-control">{(category.createDate) ? category.createDate.toLocaleString() : "--/--/--- --:--"}</p>
                         </div>
-                        <div className="column column-25">
+                        <div className="col-sm-3 form-group">
                             <label htmlFor="">{this.props.t.models.category.updateDate}</label>
-                            <p>{(category.updateDate) ? category.updateDate.toLocaleString() : "--/--/--- --:--"}</p>
+                            <p className="form-control">{(category.updateDate) ? category.updateDate.toLocaleString() : "--/--/--- --:--"}</p>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="column column-100">
+                        <div className="col-sm-12 form-group">
                             <label htmlFor="">{this.props.t.models.category.description}</label>
-                            <p>{category.description}</p>
+                            <p className="form-control">{category.description}</p>
                         </div>
+                    </div>
+                </content>
+                <content dest="#btnGroup">
+                    <div className="d-flex">
+                        <a href="/u/categories/" className="btn btn-active-secondary btn-light-secondary ms-3">
+                            {this.props.t.buttons.back}
+                        </a>
+                        <a href={`/u/category/${category._id}/edit`} className="btn btn-active-warning btn-light-warning ms-3">
+                            <FontAwesomeIcon icon={faPencilAlt} width="1.5rem" /> {this.props.t.buttons.edit}
+                        </a>
+                        <a href="/u/logout" id="logout" method="POST" className="btn btn-danger ms-3">
+                            <FontAwesomeIcon icon={faSignOutAlt} width="1.5rem" /> {this.props.t.buttons.logout}
+                        </a>
                     </div>
                 </content>
             </render>

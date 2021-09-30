@@ -1,13 +1,8 @@
 import React from 'react'
 import { Component } from 'react'
 
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Render from '../templates/render'
-import Navbar from './navbar'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import {} from '@fortawesome/free-solid-svg-icons'
 
 class Index extends Component {
     constructor(props) {
@@ -18,8 +13,8 @@ class Index extends Component {
 
     render() {
         return (
-            <render dest="#container">
-                <content>
+            <render>
+                <content dest="main">
                     <div className="row">
                         <div className="column">
                             <div className="groupbox">

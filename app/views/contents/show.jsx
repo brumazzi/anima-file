@@ -1,3 +1,5 @@
+import { faPencilAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Component } from 'react'
 
@@ -17,69 +19,78 @@ class Show extends Component {
         }
 
         return (
-            <render dest="#container">
-                <content>
+            <render>
+                <content dest="main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.content.show}</h2>
                         </div>
-                        <div className="column">
-                            <a className="button button-outline" href={`/u/contents`}>{this.props.t.buttons.back}</a>
-                            <a className="button" href={`/u/content/${content._id}/edit`}>{this.props.t.buttons.edit}</a>
-                        </div>
                     </div>
                     <div className="row">
-                            <div className="column column-50">
+                            <div className="col-sm-6 form-group">
                                 <label htmlFor="">{this.props.t.models.content.name}</label>
-                                <p className="input">{content.name}</p>
+                                <p className="form-control">{content.name}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.visible}</label>
-                                <p className="input">{content.visible ? "Sim" : "Não"}</p>
+                                <p className="form-control">{content.visible ? "Sim" : "Não"}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.complete}</label>
-                                <p className="input">{content.complete ? "Sim" : "Não"}</p>
+                                <p className="form-control">{content.complete ? "Sim" : "Não"}</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.type}</label>
-                                <p className="input">{this.props.t.models.content.types[content.type]}</p>
+                                <p className="form-control">{this.props.t.models.content.types[content.type]}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.author}</label>
-                                <p className="input">{content.author}</p>
+                                <p className="form-control">{content.author}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.publishDate}</label>
-                                <p className="input">{(content.publishDate) ? content.publishDate.toLocaleString() : "--/--/--- --:--"}</p>
+                                <p className="form-control">{(content.publishDate) ? content.publishDate.toLocaleString() : "--/--/--- --:--"}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.chapters}</label>
-                                <p className="input">{content.chapters}</p>
+                                <p className="form-control">{content.chapters}</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.createDate}</label>
-                                <p>{(content.createDate) ? content.createDate.toLocaleString() : "--/--/--- --:--"}</p>
+                                <p className="form-control">{(content) ? content.createDate.toLocaleString() : "--/--/--- --:--"}</p>
                             </div>
-                            <div className="column column-25">
+                            <div className="col-sm-3 form-group">
                                 <label htmlFor="">{this.props.t.models.content.updateDate}</label>
-                                <p>{(content.updateDate) ? content.updateDate.toLocaleString() : "--/--/--- --:--"}</p>
+                                <p className="form-control">{(content) ? content.updateDate.toLocaleString() : "--/--/--- --:--"}</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="column column-100">
+                            <div className="col-sm-6 form-group">
                                 <label htmlFor="">{this.props.t.models.content.categories}</label>
-                                <p className="input">{categories}</p>
+                                <p className="form-control">{categories}</p>
                             </div>
-                            <div className="column column-100">
+                            <div className="col-sm-6 form-group">
                                 <label htmlFor="">{this.props.t.models.content.description}</label>
-                                <p className="input">{content.description}</p>
+                                <p className="form-control">{content.description}</p>
                             </div>
                         </div>
+                </content>
+                <content dest="#btnGroup">
+                    <div className="d-flex">
+                        <a href="/u/contents/" className="btn btn-active-secondary btn-light-secondary ms-3">
+                            {this.props.t.buttons.back}
+                        </a>
+                        <a href={`/u/content/${content._id}/edit`} className="btn btn-active-warning btn-light-warning ms-3">
+                            <FontAwesomeIcon icon={faPencilAlt} width="1.5rem" /> {this.props.t.buttons.edit}
+                        </a>
+                        <a href="/u/logout" id="logout" method="POST" className="btn btn-danger ms-3">
+                            <FontAwesomeIcon icon={faSignOutAlt} width="1.5rem" /> {this.props.t.buttons.logout}
+                        </a>
+                    </div>
                 </content>
             </render>
         )
