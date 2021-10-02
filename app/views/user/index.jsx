@@ -8,7 +8,8 @@ import Render from '../templates/render'
 import Navbar from '../components/navbar'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArchive, faIdCard, faImage, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faArchive, faClipboardList, faIdCard, faImage, faSearch, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
+import Text from '../components/inputs/text'
 
 class Index extends Component {
     constructor(props) {
@@ -18,6 +19,26 @@ class Index extends Component {
     }
 
     render() {
+        let adminMenu = [];
+        if (this.user.is_admin) {
+            adminMenu = [
+                <li key='1' className="nav-item mb-2">
+                    <a href="/u/banners" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.banners}>
+                        <FontAwesomeIcon icon={faImage} width="1.5rem" />
+                    </a>
+                </li>,
+                <li key='2' className="nav-item mb-2">
+                    <a href="/u/contents" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.contents}>
+                        <FontAwesomeIcon icon={faArchive} width="1.5rem" />
+                    </a>
+                </li>,
+                <li key='3' className="nav-item mb-2">
+                    <a href="/u/categories" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.categories}>
+                        <FontAwesomeIcon icon={faArchive} width="1.5rem" />
+                    </a>
+                </li>
+            ]
+        }
         return (
             <render>
                 <content dest="#body">
@@ -28,21 +49,7 @@ class Index extends Component {
                                     <FontAwesomeIcon icon={faTachometerAlt} width="1.5rem" />
                                 </a>
                             </li>
-                            <li className="nav-item mb-2">
-                                <a href="/u/banners" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.banners}>
-                                    <FontAwesomeIcon icon={faImage} width="1.5rem" />
-                                </a>
-                            </li>
-                            <li className="nav-item mb-2">
-                                <a href="/u/contents" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.contents}>
-                                    <FontAwesomeIcon icon={faArchive} width="1.5rem" />
-                                </a>
-                            </li>
-                            <li className="nav-item mb-2">
-                                <a href="/u/categories" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.categories}>
-                                    <FontAwesomeIcon icon={faArchive} width="1.5rem" />
-                                </a>
-                            </li>
+                            {adminMenu}
                             <li className="nav-item mb-2">
                                 <a href="/u/account" className="nav-link btn btn-custom btn-icon" data-bs-toggle="tooltip" data-bs-placement="top" title={this.props.t.user.navbar.account}>
                                     <FontAwesomeIcon icon={faIdCard} width="1.5rem" />
@@ -53,7 +60,7 @@ class Index extends Component {
                     <section id="kt_wrapper" className="wrapper d-flex flex-column flex-row-fluid">
                         <Header>
                             <div className="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
-                                <h1 className="text-dark fw-bold my-0 fs-2">
+                                <h1 className="text-dark fw-bold my-0 fs-2 d-flex">
                                     <a href="/home">{this.props.t.text.title}</a>
                                 </h1>
                             </div>
@@ -67,6 +74,16 @@ class Index extends Component {
                                     </span>
                                 </div>
                             </div>
+                            <form className="text-dark d-flex flex-row align-items-center">
+                                <div className="input-group input-group-sm">
+                                    <input className="form-control" placeholder={this.props.t.home.searchBar}></input>
+                                    <span className="input-group-text">
+                                        <button className="btn btn-active-primary btn-light-primary btn-sm">
+                                            <FontAwesomeIcon icon={faSearch} width="1.0rem"></FontAwesomeIcon>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
                             <div id="btnGroup" className="d-flex flex-shrink-0">
                                 <div className="d-flex ms-3">
                                     <a href="/u/dashboard" id="" method="GET" className="btn bg-body btn-color-gray-600 btn-active-info ms-3">

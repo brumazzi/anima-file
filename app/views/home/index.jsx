@@ -9,8 +9,7 @@ import Render from '../templates/render'
 import Navbar from '../components/navbar'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressCard, faArchive, faIdCard, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
-import { faAccusoft } from '@fortawesome/free-brands-svg-icons'
+import { faSearch, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Index extends Component {
     constructor(props) {
@@ -47,11 +46,11 @@ class Index extends Component {
                 <content dest="#body">
                     <Navbar>
                         <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom btn-icon" href="/c/anime"><span>{this.props.t.home.menu.animes}</span></a></li>
-                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom btn-icon" href="/c/manga"><span>{this.props.t.home.menu.mangas}</span></a></li>
-                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom btn-icon" href="/c/serie"><span>{this.props.t.home.menu.series}</span></a></li>
-                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom btn-icon" href="/c/film"><span>{this.props.t.home.menu.films}</span></a></li>
-                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom btn-icon" href="/c/dorama"><span>{this.props.t.home.menu.doramas}</span></a></li>
+                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom" href="/c/anime"><span>{this.props.t.home.menu.animes}</span></a></li>
+                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom" href="/c/manga"><span>{this.props.t.home.menu.mangas}</span></a></li>
+                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom" href="/c/serie"><span>{this.props.t.home.menu.series}</span></a></li>
+                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom" href="/c/film"><span>{this.props.t.home.menu.films}</span></a></li>
+                            <li className="nav-item mb-2"><a className="nav-link btn btn-custom" href="/c/dorama"><span>{this.props.t.home.menu.doramas}</span></a></li>
                         </ul>
                     </Navbar>
                     <section id="kt_wrapper" className="wrapper d-flex flex-column flex-row-fluid">
@@ -71,6 +70,17 @@ class Index extends Component {
                                     </span>
                                 </div>
                             </div>
+                            <form className="text-dark d-flex flex-row align-items-center">
+                                <div className="input-group input-group-sm">
+                                    <input data-container='UPLOAD_IMAGE' type="file" className="form-control" placeholder={this.props.t.home.searchBar}></input>
+                                    <input id="UPLOAD_IMAGE"/>
+                                    <span className="input-group-text">
+                                        <button className="btn btn-active-primary btn-light-primary btn-sm">
+                                            <FontAwesomeIcon icon={faSearch} width="1.0rem"></FontAwesomeIcon>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
                             {loginButtons}
                         </Header>
                         <Main>

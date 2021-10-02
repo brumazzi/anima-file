@@ -45,10 +45,6 @@ class Form extends Component {
                             <div className="column">
                                 <h2>{this.props.title}</h2>
                             </div>
-                            <div className="column">
-                                <a className="button button-outline" href={content._id ? `/u/content/${content._id}` : '/u/contents'}>{this.props.t.buttons.cancel}</a>
-                                <button className="button">{this.props.t.buttons.save}</button>
-                            </div>
                         </div>
                         <div className="row">
                             <div className="col-sm-6">

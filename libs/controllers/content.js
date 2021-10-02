@@ -50,7 +50,7 @@ module.exports = {
         ContentModel.findOneAndUpdate({ _id: req.params._id }, req.body.content, (err, content) => {
             req.body.content.updateDate = new Date()
             if (err) res.render('contents/edit', { t: res.__('translate'), session: req.session, content: content, message: "Lorem" })
-            else res.send(sendRedirect(`/u/content/${content._id}`, JSON.stringify({ title: "Lorem", icon: "success" })))
+            else res.send(sendRedirect(`/u/content/${content._id}`, { title: "Lorem", icon: "success" }))
         })
     },
     show: async (req, res) => {

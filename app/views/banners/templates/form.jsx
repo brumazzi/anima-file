@@ -17,7 +17,7 @@ class Form extends Component {
         return (
             <div className="d-flex row justify-content-center">
                 <div className="col-sm-12">
-                    <form action={this.props.url} method="post" className="form">
+                    <form action={this.props.url} method={this.props.method} className="form" encType="multipart/form-data">
                         <button className="d-none" id="form-submit"></button>
                         <div className="row">
                             <div className="col">
@@ -26,7 +26,9 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-3">
-                                <Text id="banner-image" type="file" name="banner.image" value={banner.image}>{this.props.t.models.banner.image}</Text>
+                                <img src={`${banner.image}`} alt="" />
+                                <Text container="banner-image" type="file" accept=".jpg, .jpeg, .png">{this.props.t.models.banner.image}</Text>
+                                <Text className="d-none" id="banner-image" type="text" name="banner.image"></Text>
                             </div>
                             <div className="col-sm-9">
                                 <div className="row">

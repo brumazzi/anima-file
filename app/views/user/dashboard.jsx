@@ -3,6 +3,8 @@ import { Component } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/free-solid-svg-icons'
+import Checkbox from '../components/inputs/checkbox'
+import RadioButton from '../components/inputs/radiobutton'
 
 class Index extends Component {
     constructor(props) {
@@ -16,7 +18,7 @@ class Index extends Component {
             <render>
                 <content dest="main">
                     <div className="row">
-                        <div className="column">
+                        <div className="col">
                             <div className="groupbox">
                                 <span className="groupbox-item">0</span>
                                 <span className="groupbox-item">1</span>

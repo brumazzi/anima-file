@@ -8,11 +8,14 @@ class RadioButton extends Component{
     }
 
     render() {
+        let checked = this.props.checked ? "checked" : ""
         return(
-            <label htmlFor={this.props.id} className="radio circle">
-                <input type="radio" name={this.props.name} id={this.props.id} value={this.props.value} required={this.props.required}/>
-                <span>{this.props.children}</span>
-            </label>
+            <div className="form-check form-switch form-check-custom form-check-solid form-group">
+                <input className="form-check-input" type="radio" name={this.props.name} id={this.props.id} defaultChecked={checked} value={this.props.value} required={this.props.required} />
+                <label className="form-check-label text-gray-600" htmlFor={this.props.id}>
+                    {this.props.children}
+                </label>
+            </div>
         )
     }
 }

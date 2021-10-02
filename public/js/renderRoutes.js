@@ -7,7 +7,6 @@ function requestShowSpinner() {
 function requestRender(requestData) {
     var render = new DOMParser();
     var scriptList = new Array();
-    var render;
     try {
         render = render.parseFromString(requestData, 'text/html').body.children[0];
         if (render.nodeName.toUpperCase() == "RENDER") {
@@ -24,6 +23,7 @@ function requestRender(requestData) {
                         for (var j = 0; j < anchors.length; j += 1) anchorAddRedirectEvent(anchors[j]);
                         for (var j = 0; j < forms.length; j += 1) formAddSubmitEvent(forms[j]);
                         for (var j = 0; j < listeners.length; j += 1) elementAddEventListener(listeners[j], domDestinies[i]);
+                        applyJSFunction(domDestinies[i]);
                     }
                 } else {
                     throw ("Render destiny not found");
@@ -106,8 +106,14 @@ function formAddSubmitEvent(element) {
         if (!form.checkValidity()) return false;
 
         var formData = new FormData(form);
-        var formDataJson = {};
+        var formDataJson = {
+            // fileData: []
+        };
+        // var fileReader = null;
+        // var fileList = [];
+
         formData.forEach(function (value, key) {
+            // if(value instanceof File && value.size > 0) fileList.push(value);
             if (key.match(/\./)) {
                 keyPart = key.split('.');
                 formDataJsonString = "formDataJson";
@@ -128,6 +134,19 @@ function formAddSubmitEvent(element) {
                     formDataJson[key] = value;
             }
         });
+
+        // var countFiles = fileList.length;
+
+        // for(var i=0; i<fileList.length; i+=1){
+        //     var fileReader = new FileReader();
+        //     fileReader.formData = formDataJson;
+        //     fileReader.addEventListener('load', function(evt){
+        //         formDataJson.fileData.push(evt.target.result);
+        //         if(--countFiles == 0) requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
+        //     });
+        //     fileReader.readAsText(fileList[i]);
+        // }
+        // if(fileList.length === 0) requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
         requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
     });
 }
@@ -158,6 +177,10 @@ function toast(args) {
         }
     });
     mixin.fire(args);
+}
+
+function applyJSFunction(content){
+    uploadFileInit(content);
 }
 
 window.addEventListener("load", function () {

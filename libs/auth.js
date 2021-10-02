@@ -3,7 +3,7 @@ const GenPassword = require('./password')
 const bcrypt = require('bcrypt')
 
 function sendError(error=""){return `<render dest="#none"><script type="text/javascript" command="alert({title: '${error}', icon: 'error'})" /></render>`}
-function sendRedirect(templateUrl="", message=null){return `<render dest="#none"><script type="text/javascript" command='requestPage("GET", "${templateUrl}");${message ? `alert(${message});` : ""}' /></render>`}
+function sendRedirect(templateUrl="", message=null){return `<render dest="#none"><script type="text/javascript" command='requestPage("GET", "${templateUrl}");${message ? `alert(${JSON.stringify(message)});` : ""}' /></render>`}
 
 module.exports = {
     isUserAuthenticated: async (req, res, next) => {
@@ -20,7 +20,7 @@ module.exports = {
         if(user && bcrypt.compareSync(password, user.password)){
             req.session.user = user
             res.send(sendRedirect('/home/'))
-        }else res.send(sendError('Usuário ou senha inválidos'))
+        }else res.send(sendError('Usuário ou senha inválidos')) // TODO change error message
     },
     userRegistrate: async (req, res, next) => {
         let user = new User(req.body.user)
@@ -28,7 +28,7 @@ module.exports = {
         if(gemPass.success){
             user.save((error)=>{
                 if(error)
-                    res.send(sendError('Lorem Ipsum'))
+                    res.send(sendError('Lorem Ipsum')) // TODO change error message
                 else
                     res.send(sendRedirect('/login'))
             })

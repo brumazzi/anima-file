@@ -24,6 +24,7 @@ class Base extends Component {
                     <meta charSet="utf-8" />
                     <meta name="render" url="/home" method="get" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="wsserver" content="ws://localhost:3001"/>
                     <title>Teste</title>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
                     <link rel="stylesheet" href="/css/seven.css" crossOrigin="anonymous" />
@@ -32,6 +33,7 @@ class Base extends Component {
                     <link rel="stylesheet" href="/css/base.css" crossOrigin="anonymous" />
                     <script src="/js/sweetalert2.min.js"></script>
                     <script src="/js/renderRoutes.js"></script>
+                    <script src="/js/wsFileUpload.js"></script>
                 </head>
                 <body id="kt_body" className="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled">
                     <div className="d-flex flex-column flex-root">

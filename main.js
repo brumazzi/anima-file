@@ -1,6 +1,8 @@
 const express = require('./config/express')
 const {mongoose} = require('./config/db')
 
+require('./config/ws')
+
 const PORT = 3000
 express.listen(PORT)
 console.log(`Start server on localhost:${PORT}`)

@@ -23,7 +23,7 @@ module.exports = {
         CategoryModel.findOneAndUpdate({ _id: req.params._id }, req.body.category, (err, category)=>{
             req.body.category.updateDate = new Date()
             if(err) res.render('categories/edit', { t: res.__('translate'), session: req.session, category: category, message: "Lorem"})
-            else res.send(sendRedirect(`/u/category/${category._id}`, JSON.stringify({title: "Lorem", icon: "success"})))
+            else res.send(sendRedirect(`/u/category/${category._id}`, {title: "Lorem", icon: "success"}))
         })
     },
     edit: async (req, res) => {

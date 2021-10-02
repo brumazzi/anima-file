@@ -36,9 +36,11 @@
             "edit": "Editar",
             "save": "Salvar",
             "cancel": "Cancelar",
-            "logout": "Logout"
+            "logout": "Logout",
+            "add": "Adicionar"
         },
         "home": {
+            "searchBar": "Buscar",
             "formLogin": {
                 "title": "Login",
                 "login": "Usuario",
@@ -68,6 +70,7 @@
         },
         "user": {
             "navbar": {
+                "notebook": "Agenda",
                 "dashboard": "Dashboard",
                 "banners": "Banners",
                 "categories": "Categorias",
@@ -89,7 +92,10 @@
                 "active": "Ativa",
                 "description": "Descrição",
                 "createDate": "Data de criação",
-                "updateDate": "Data de atualização"
+                "updateDate": "Data de atualização",
+                "errors": {
+                    "imageUploadJPG": "não é uma arquivo JPG"
+                }
             },
             "category":{
                 "name": "Nome",
