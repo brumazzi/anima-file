@@ -10,6 +10,9 @@ import Navbar from '../components/navbar'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
+import Checkbox from '../components/inputs/checkbox'
+import CheckLabel from '../components/inputs/checklabel'
+import SelectLabel from '../components/inputs/selectlabel'
 
 class Index extends Component {
     constructor(props) {
@@ -41,6 +44,15 @@ class Index extends Component {
                 </div>
             </div>
         }
+
+        let selectItems = [
+            {value: 1, label: "Key 1"},
+            {value: 2, label: "Key 2"},
+            {label: "Group", items:[
+                {value: 3, label: "Key group 1"},
+                {value: 4, label: "Key group 2"},
+            ]}
+        ]
         return (
             <render>
                 <content dest="#body">
@@ -72,8 +84,7 @@ class Index extends Component {
                             </div>
                             <form className="text-dark d-flex flex-row align-items-center">
                                 <div className="input-group input-group-sm">
-                                    <input data-container='UPLOAD_IMAGE' type="file" className="form-control" placeholder={this.props.t.home.searchBar}></input>
-                                    <input id="UPLOAD_IMAGE"/>
+                                    <input  type="search" className="form-control" placeholder={this.props.t.home.searchBar}></input>
                                     <span className="input-group-text">
                                         <button className="btn btn-active-primary btn-light-primary btn-sm">
                                             <FontAwesomeIcon icon={faSearch} width="1.0rem"></FontAwesomeIcon>
@@ -95,6 +106,8 @@ class Index extends Component {
                                     <h2>Mais Requeridos</h2>
                                 </span>
                             </Slider>
+                            <SelectLabel name="select" id="select" items={selectItems} selected={[1,3]}/>
+                            <CheckLabel id="test" color="success">xxxxxxxxx</CheckLabel>
                         </Main>
                         <Footer>
                             <div className="text-dark order-2 order-md-1">

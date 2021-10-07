@@ -16,7 +16,7 @@ class Card extends Component{
         return (
             <div className="card card-px-0">
                 <div className="card-header overflow-hidden">
-                    <img src="" alt="" width="100%" style={{border: 'none'}} />
+                    <img src={content.image} alt="" width="100%" style={{border: 'none'}} />
                 </div>
                 <div className="card-body px-2">
                     <p>{content.description}</p>

@@ -1,3 +1,5 @@
+import { faUpload } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { times } from 'lodash'
 import React from 'react'
 import { Component } from 'react'
@@ -26,9 +28,16 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-3">
-                                <img src={`${banner.image}`} alt="" />
-                                <Text container="banner-image" type="file" accept=".jpg, .jpeg, .png">{this.props.t.models.banner.image}</Text>
-                                <Text className="d-none" id="banner-image" type="text" name="banner.image"></Text>
+                                <div className="form-group mb-5 col-sm-12">
+                                    <label className="">
+                                        {this.props.t.models.banner.image} <label htmlFor="file-chooser" className="pointer"><FontAwesomeIcon icon={faUpload} width='1rem' /></label>
+                                    </label>
+                                    <img width="100%" src={`${banner.image}`} alt="Fazer Upload" />
+                                </div>
+                                <div className="d-none">
+                                    <Text className="" id="file-chooser" container="banner-image" type="file" accept=".jpg, .jpeg, .png"></Text>
+                                    <Text className="" id="banner-image" type="text" name="banner.image" value={banner.image}></Text>
+                                </div>
                             </div>
                             <div className="col-sm-9">
                                 <div className="row">

@@ -1,35 +1,33 @@
 /* personal checkbox and radio */
-.form-group label
-    font-weight: bold
 // label.circle span::before
 //     border-radius: 100%
 // label.rounded span::before
 //     border-radius: 4px
-// label.radio input, label.checkbox input, label.checklabel input
-//     display: none
+label.radio input, label.checkbox input, label.checklabel input
+    display: none
 // label.radio span::before, label.checkbox span::before
 //     content: ""
 //     width: 22px
 //     height: 22px
 //     display: inline-block
 
-// label.checklabel
-//     display: inline-block
-//     margin-right: 4px
+label.checklabel
+    margin-right: 4px
 
-// label.checkbox, label.radio, label.checklabel
-//     cursor: pointer
+label.checkbox, label.radio, label.checklabel
+    cursor: pointer
 
-// label.checklabel input + span
-//     background-color: $color-secondary
-//     padding: 2px 8px
-//     border: solid 2px $color-border
-//     border-radius: 8px
-//     color: $color-text
+label.checklabel input + span
+    background-color: $color-light-primary
+    // padding: 2px 8px
+    // border: solid 2px $color-border
+    // border-radius: 8px
+    color: $text-primary
+    transition: background 1s
 
-// label.checklabel input:checked + span
-//     background-color: $color-primary
-//     color: $color-text
+label.checklabel input:checked + span
+    background-color: $color-primary
+    color: $text-light
 
 // label input:checked + span::before
 //     background-color: $color-primary
@@ -40,5 +38,6 @@
 // label.radio span::before, label.checkbox span::before
 //     border: solid 2px $color-border
 
-
+label
+    font-weight: bold
 /* input layout */

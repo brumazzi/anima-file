@@ -35,7 +35,7 @@ class Select extends Component{
 
         return(
             <div className="form-group">
-                <label htmlFor={this.props.id} className="text-gray-600">{this.props.children}</label>
+                <label htmlFor={this.props.id} className="">{this.props.children}</label>
                 <select name={this.props.name} id={this.props.id} className={`form-select ${this.props.className}`}>
                     {selectOptions}
                 </select>

@@ -2,6 +2,8 @@ import { faAngleLeft, faEye, faPen, faPencilAlt, faSave, faSignOutAlt } from '@f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Component } from 'react'
+import Checkbox from '../components/inputs/checkbox'
+import Text from '../components/inputs/text'
 
 class Show extends Component {
     constructor(props) {
@@ -23,7 +25,9 @@ class Show extends Component {
                     <div className="row">
                         <div className="col-sm-3 form-group">
                             <label htmlFor="">{this.props.t.models.banner.image}</label>
-                            <p className="form-control">{banner.image}</p>
+                            <p className="">
+                                <img width="100%" src={`${banner.image}`} alt="" />
+                            </p>
                         </div>
                         <div className="col-sm-9">
                             <div className="row">
@@ -32,8 +36,9 @@ class Show extends Component {
                                     <p className="form-control">{banner.title}</p>
                                 </div>
                                 <div className="col-sm-6 form-group">
-                                    <label htmlFor="">{this.props.t.models.banner.active}</label>
-                                    <p className="form-control">{banner.active ? this.props.t.text.yes : this.props.t.text.no}</p>
+                                    <form id="changeStatus" action={`/u/banner/${banner._id}`} method='put' className="form">
+                                        <Checkbox checked={banner.active} disabled={true}>{this.props.t.models.banner.active}</Checkbox>
+                                    </form>
                                 </div>
                             </div>
                             <div className="row">
@@ -68,6 +73,7 @@ class Show extends Component {
                         </a>
                     </div>
                 </content>
+                <listener action="change" callback="(evt)=>{document.getElementById('changeStatus').submit()}" target="#banner-active" />
             </render>
         )
     }

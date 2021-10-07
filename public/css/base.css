@@ -1,5 +1,23 @@
 /* personal checkbox and radio */
-.form-group label {
+label.radio input, label.checkbox input, label.checklabel input {
+  display: none; }
+
+label.checklabel {
+  margin-right: 4px; }
+
+label.checkbox, label.radio, label.checklabel {
+  cursor: pointer; }
+
+label.checklabel input + span {
+  background-color: #F8F5FF;
+  color: #7239EA;
+  transition: background 1s; }
+
+label.checklabel input:checked + span {
+  background-color: #7239EA;
+  color: #F5F8FA; }
+
+label {
   font-weight: bold; }
 
 /* input layout */
@@ -25,9 +43,12 @@ body[data-spinner=true]::before {
   background-repeat: no-repeat; }
 
 table tbody tr:hover {
-  background-color: #4d84ca3a; }
+  background-color: #F8F5FF; }
 
 .slider {
   display: block; }
   .slider .slider-item {
     display: inline-block; }
+
+.pointer {
+  cursor: pointer; }

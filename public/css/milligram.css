@@ -8,7 +8,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: #606c76;
+  color: #E4E6EF;
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.6em;
   font-weight: 300;
@@ -28,8 +28,8 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: #4d83ca;
-  border: 0.1rem solid #4d83ca;
+  background-color: #7239EA;
+  border: 0.1rem solid #7239EA;
   border-radius: .4rem;
   color: #fff;
   cursor: pointer;
@@ -53,8 +53,8 @@ input[type='submit'] {
   input[type='reset']:hover,
   input[type='submit']:focus,
   input[type='submit']:hover {
-    background-color: #606c76;
-    border-color: #606c76;
+    background-color: #E4E6EF;
+    border-color: #E4E6EF;
     color: #fff;
     outline: 0; }
   .button[disabled],
@@ -73,15 +73,15 @@ input[type='submit'] {
     input[type='reset'][disabled]:hover,
     input[type='submit'][disabled]:focus,
     input[type='submit'][disabled]:hover {
-      background-color: #4d83ca;
-      border-color: #4d83ca; }
+      background-color: #7239EA;
+      border-color: #7239EA; }
   .button.button-outline,
   button.button-outline,
   input[type='button'].button-outline,
   input[type='reset'].button-outline,
   input[type='submit'].button-outline {
     background-color: transparent;
-    color: #4d83ca; }
+    color: #7239EA; }
     .button.button-outline:focus, .button.button-outline:hover,
     button.button-outline:focus,
     button.button-outline:hover,
@@ -92,8 +92,8 @@ input[type='submit'] {
     input[type='submit'].button-outline:focus,
     input[type='submit'].button-outline:hover {
       background-color: transparent;
-      border-color: #606c76;
-      color: #606c76; }
+      border-color: #E4E6EF;
+      color: #E4E6EF; }
     .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
     button.button-outline[disabled]:focus,
     button.button-outline[disabled]:hover,
@@ -104,7 +104,7 @@ input[type='submit'] {
     input[type='submit'].button-outline[disabled]:focus,
     input[type='submit'].button-outline[disabled]:hover {
       border-color: inherit;
-      color: #4d83ca; }
+      color: #7239EA; }
   .button.button-clear,
   button.button-clear,
   input[type='button'].button-clear,
@@ -112,7 +112,7 @@ input[type='submit'] {
   input[type='submit'].button-clear {
     background-color: transparent;
     border-color: transparent;
-    color: #4d83ca; }
+    color: #7239EA; }
     .button.button-clear:focus, .button.button-clear:hover,
     button.button-clear:focus,
     button.button-clear:hover,
@@ -124,7 +124,7 @@ input[type='submit'] {
     input[type='submit'].button-clear:hover {
       background-color: transparent;
       border-color: transparent;
-      color: #606c76; }
+      color: #E4E6EF; }
     .button.button-clear[disabled]:focus, .button.button-clear[disabled]:hover,
     button.button-clear[disabled]:focus,
     button.button-clear[disabled]:hover,
@@ -134,7 +134,7 @@ input[type='submit'] {
     input[type='reset'].button-clear[disabled]:hover,
     input[type='submit'].button-clear[disabled]:focus,
     input[type='submit'].button-clear[disabled]:hover {
-      color: #4d83ca; }
+      color: #7239EA; }
 
 code {
   background: #f4f5f6;
@@ -146,7 +146,7 @@ code {
 
 pre {
   background: #f4f5f6;
-  border-left: 0.3rem solid #4d83ca;
+  border-left: 0.3rem solid #7239EA;
   overflow-y: hidden; }
   pre > code {
     border-radius: 0;
@@ -200,14 +200,14 @@ select {
   input:not([type]):focus,
   textarea:focus,
   select:focus {
-    border-color: #4d83ca;
+    border-color: #7239EA;
     outline: 0; }
 
 select {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
   padding-right: 3.0rem; }
   select:focus {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%234d83ca" d="M0,0l6,8l6-8"/></svg>'); }
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%237239EA" d="M0,0l6,8l6-8"/></svg>'); }
   select[multiple] {
     background: none;
     height: auto; }
@@ -341,10 +341,10 @@ input[type='radio'] {
       padding: 0 1.0rem; } }
 
 a {
-  color: #4d83ca;
+  color: #7239EA;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #606c76; }
+    color: #E4E6EF; }
 
 dl,
 ol,

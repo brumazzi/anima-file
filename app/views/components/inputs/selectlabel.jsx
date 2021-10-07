@@ -16,6 +16,7 @@ class SelectLabel extends Component {
 
         for (let i = 0; i < this.props.items.length; i += 1) {
             let item = this.props.items[i]
+            console.log(item)
 
             if (item.items) {
                 let group = item

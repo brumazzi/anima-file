@@ -107,6 +107,7 @@
                 "name": "Nome",
                 "slug": "Slug",
                 "author": "Autor",
+                "image": "Capa",
                 "publishDate": "Data de publicação",
                 "visible": "Visível",
                 "complete": "Completo",

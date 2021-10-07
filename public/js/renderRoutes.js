@@ -106,14 +106,9 @@ function formAddSubmitEvent(element) {
         if (!form.checkValidity()) return false;
 
         var formData = new FormData(form);
-        var formDataJson = {
-            // fileData: []
-        };
-        // var fileReader = null;
-        // var fileList = [];
+        var formDataJson = {};
 
         formData.forEach(function (value, key) {
-            // if(value instanceof File && value.size > 0) fileList.push(value);
             if (key.match(/\./)) {
                 keyPart = key.split('.');
                 formDataJsonString = "formDataJson";
@@ -135,18 +130,6 @@ function formAddSubmitEvent(element) {
             }
         });
 
-        // var countFiles = fileList.length;
-
-        // for(var i=0; i<fileList.length; i+=1){
-        //     var fileReader = new FileReader();
-        //     fileReader.formData = formDataJson;
-        //     fileReader.addEventListener('load', function(evt){
-        //         formDataJson.fileData.push(evt.target.result);
-        //         if(--countFiles == 0) requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
-        //     });
-        //     fileReader.readAsText(fileList[i]);
-        // }
-        // if(fileList.length === 0) requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
         requestPage(form.getAttribute('method'), form.getAttribute('action'), formDataJson);
     });
 }

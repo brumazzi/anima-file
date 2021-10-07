@@ -3,6 +3,7 @@ const GenPassword = require('./password')
 const bcrypt = require('bcrypt')
 
 function sendError(error=""){return `<render dest="#none"><script type="text/javascript" command="alert({title: '${error}', icon: 'error'})" /></render>`}
+function sendMessage(message=null){return `<render dest="#none"><script type="text/javascript" command='${message ? `alert(${JSON.stringify(message)});` : ""}' /></render>`}
 function sendRedirect(templateUrl="", message=null){return `<render dest="#none"><script type="text/javascript" command='requestPage("GET", "${templateUrl}");${message ? `alert(${JSON.stringify(message)});` : ""}' /></render>`}
 
 module.exports = {

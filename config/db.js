@@ -29,6 +29,7 @@ const CONTENT_SCHEMA = new Schema({
     publishDate: {type: Date},
     visible: {type: Boolean, default: false},
     complete: {type: Boolean, default: false},
+    image: {type: String, required: false},
     type: {type: String, required: true},
     chapters: {type: Number},
     description: {type: String},

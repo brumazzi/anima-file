@@ -10,7 +10,7 @@ class Text extends Component {
     render() {
         let label = '';
         if (this.props.children)
-            label = <label htmlFor={this.props.id} className="text-gray-600">{this.props.children}</label>
+            label = <label htmlFor={this.props.id} className="">{this.props.children}</label>
 
         return (
             <div className="form-group mb-5 col-sm-12">
