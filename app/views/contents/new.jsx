@@ -18,7 +18,7 @@ class New extends Component {
 
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <Form t={this.props.t} user={this.props.user}
                         content={content}
                         categories={categories}

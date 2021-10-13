@@ -30,7 +30,7 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                                <Text id="category-description" type="text" name="category.description" value={category.description}>{this.props.t.models.category.description}</Text>
+                                <Text id="category-description" multLines={true} type="text" name="category.description" value={category.description}>{this.props.t.models.category.description}</Text>
                             </div>
                         </div>
                     </form>

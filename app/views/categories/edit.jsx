@@ -16,7 +16,7 @@ class Edit extends Component {
         let category = this.props.category
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <Form t={this.props.t} user={this.props.user} category={category} url={`/u/category/${category._id}`} method='PUT' title={this.props.t.titles.category.edit}/>
                 </content>
                 <content dest="#btnGroup">

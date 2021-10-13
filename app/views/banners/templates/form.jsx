@@ -52,7 +52,7 @@ class Form extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                                <Text id="banner-description" type="text" name="banner.description" value={banner.description}>{this.props.t.models.banner.description}</Text>
+                                <Text id="banner-description" multLines={true} type="text" name="banner.description" value={banner.description}>{this.props.t.models.banner.description}</Text>
                             </div>
                         </div>
                     </form>

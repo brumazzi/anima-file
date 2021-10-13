@@ -88,7 +88,7 @@ class Form extends Component {
                                 </div>
                                 <div className="row">
                                     <div className="col-sm-6">
-                                        <Text id="content-description" type="text" name="content.description" value={content.description}>{this.props.t.models.content.description}</Text>
+                                        <Text id="content-description" type="text" multLines={true} name="content.description" value={content.description}>{this.props.t.models.content.description}</Text>
                                     </div>
                                     <div className="col-sm-6">
                                         <input type="hidden" name="content.categories" value="[]" />

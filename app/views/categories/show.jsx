@@ -14,7 +14,7 @@ class Show extends Component {
         let category = this.props.category
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.category.show}</h2>

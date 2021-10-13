@@ -16,7 +16,7 @@ class Show extends Component {
         let banner = this.props.banner
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="col">
                             <h2>{this.props.t.titles.banner.show}</h2>

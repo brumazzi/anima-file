@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 
 import Text from '../components/inputs/text'
+import NavBar from './templates/navbar'
 
 class Index extends Component {
     constructor(props) {
@@ -13,10 +14,9 @@ class Index extends Component {
         let user = this.props.user
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="d-flex row justify-content-center">
                         <div className="col-sm-5">
-                            <div className="row"></div>
                             <form action="/register" method="post" className="form row">
                                 <h3>{this.props.t.home.formRegister.title}</h3>
                                 <Text type="text" id="login" name="user.login" value={(user) ? user.login : ""}>
@@ -38,13 +38,14 @@ class Index extends Component {
                                     {this.props.t.models.user.info.birth}
                                 </Text>
                                 <div className="form-group">
-                                    <button className="btn btn-primary ms-3">{this.props.t.home.formRegister.button}</button>
+                                    <button className="btn btn-primary">{this.props.t.home.formRegister.button}</button>
                                     <a className="btn btn-secondary ms-3" href="/login">{this.props.t.home.formRegister.toLogin}</a>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </content>
+                <NavBar t={this.props.t}></NavBar>
             </render>
         )
     }

@@ -1,10 +1,8 @@
 import React from 'react'
 import { Component } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {} from '@fortawesome/free-solid-svg-icons'
-import Checkbox from '../components/inputs/checkbox'
-import RadioButton from '../components/inputs/radiobutton'
+import NavBar from './templates/navbar'
+import Header from './templates/header'
 
 class Index extends Component {
     constructor(props) {
@@ -16,7 +14,7 @@ class Index extends Component {
     render() {
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="col">
                             <div className="groupbox">
@@ -27,6 +25,9 @@ class Index extends Component {
                         </div>
                     </div>
                 </content>
+                <NavBar t={this.props.t} user={this.user}></NavBar>
+                <Header t={this.props.t} user={this.user}>
+                </Header>
             </render>
         )
     }

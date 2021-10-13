@@ -16,7 +16,7 @@ class Index extends Component{
     render() {
         return(
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.category.index}</h2>

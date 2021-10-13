@@ -22,7 +22,7 @@ class Index extends Component{
 
         return(
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.content.index}</h2>

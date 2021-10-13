@@ -20,7 +20,7 @@ class New extends Component {
 
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         {contentsCard}
                     </div>

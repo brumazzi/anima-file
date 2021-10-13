@@ -16,7 +16,7 @@ class Edit extends Component {
         let banner = this.props.banner
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <Form t={this.props.t} user={this.props.user} banner={banner} url={`/u/banner/${banner._id}`} method='PUT' title={this.props.t.titles.banner.edit} />
                 </content>
                 <content dest="#btnGroup">

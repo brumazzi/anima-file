@@ -16,7 +16,7 @@ class New extends Component {
         let banner = this.props.banner
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <Form t={this.props.t} user={this.props.user} banner={banner} url="/u/banner/" method="POST" title={this.props.t.titles.banner.new} />
                 </content>
                 <content dest="#btnGroup">

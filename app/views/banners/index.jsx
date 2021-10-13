@@ -17,7 +17,7 @@ class Index extends Component {
     render() {
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="col-auto">
                             <h2>{this.props.t.titles.banner.index}</h2>

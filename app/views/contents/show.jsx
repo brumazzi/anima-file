@@ -1,4 +1,4 @@
-import { faPencilAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPencilAlt, faSignOutAlt, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Component } from 'react'
@@ -20,7 +20,7 @@ class Show extends Component {
 
         return (
             <render>
-                <content dest="main">
+                <content dest="#main">
                     <div className="row">
                         <div className="column">
                             <h2>{this.props.t.titles.content.show}</h2>
@@ -29,7 +29,7 @@ class Show extends Component {
                     <div className="row">
                         <div className="col-sm-3">
                             <label className="">
-                                {this.props.t.models.content.image} <label htmlFor="file-chooser" className="pointer"><FontAwesomeIcon icon={faUpload} width='1rem' /></label>
+                                {this.props.t.models.content.image} <label htmlFor="file-chooser" className="pointer"></label>
                             </label>
                             <img width="100%" src={`${content.image}`} alt="Fazer Upload" />
                         </div>
