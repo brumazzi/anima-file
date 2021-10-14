@@ -49,7 +49,8 @@ class Base extends Component {
                             </Navbar>
                             <section id="kt_wrapper" className="wrapper d-flex flex-column flex-row-fluid">
                                 <Header></Header>
-                                <Main></Main>
+                                <Main>
+                                </Main>
                                 <Footer>
                                     <div className="text-dark order-2 order-md-1">
                                         <span className="text-gray-400 fw-bold me-1">Created by</span>

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
 import NavBar from './templates/navbar'
 import Header from './templates/header'
+import Text from '../components/inputs/text'
 
 class Index extends Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class Index extends Component {
                             <h2>Mais Requeridos</h2>
                         </span>
                     </Slider>
+                    <Text className="" id="file-chooser" container="banner-image" type="file" accept=".jpg, .jpeg, .png"></Text>
                 </content>
                 <NavBar t={this.props.t}></NavBar>
                 <Header t={this.props.t} user={this.user}>

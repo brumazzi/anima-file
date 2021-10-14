@@ -40,7 +40,7 @@ module.exports = {
 
         content.save((err, content) => {
             if (err) res.render('contents/new', { t: res.__('translate'), session: req.session, content: content, message: "Lorem" })
-            else res.render('contents/show', { t: res.__('translate'), session: req.session, content: content, message: "Lorem" })
+            else res.send(sendRedirect(`/u/content/${content._id}`, { title: "Lorem", icon: "success" }))
         })
     },
     update: async (req, res) => {
@@ -62,7 +62,7 @@ module.exports = {
         })
     },
     view: async (req, res) => {
-        ContentModel.find({ type: req.params.type }, async (err, contents) => {
+        ContentModel.find({ type: req.params.type, visible: true }, async (err, contents) => {
             let category_ids = []
             let categories = []
             for (let i = 0; i < contents.length; i += 1) {

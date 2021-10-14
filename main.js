@@ -4,7 +4,7 @@ const {mongoose} = require('./config/db')
 require('./config/ws')
 
 const PORT = 3000
-express.listen(PORT)
+express.listen(PORT, '0.0.0.0')
 console.log(`Start server on localhost:${PORT}`)
 
-mongoose.connect('mongodb://localhost:27017/animaFile')
+mongoose.connect('mongodb://127.0.0.1:27017/animaFile')

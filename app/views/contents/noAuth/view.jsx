@@ -15,13 +15,13 @@ class New extends Component {
         let contentsCard = []
 
         for(let i=0; i<contents.length; i+=1){
-            contentsCard.push(<div key={contents[i]._id} className="col-sm-4"><Card t={this.props.t} content={contents[i]}></Card></div>)
+            contentsCard.push(<div key={contents[i]._id} className="col-sm-3"><Card t={this.props.t} content={contents[i]}></Card></div>)
         }
 
         return (
             <render>
                 <content dest="#main">
-                    <div className="row">
+                    <div className="row justify-content-sm-center">
                         {contentsCard}
                     </div>
                 </content>
