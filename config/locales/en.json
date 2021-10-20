@@ -1,6 +1,46 @@
 {
     "translate":{
+        "text": {
+            "title": "AnimaFile",
+            "yes": "Sim",
+            "no": "Não"
+        },
+        "titles": {
+            "banner":{
+                "new": "Novo Banner",
+                "edit": "Editar Banner",
+                "show": "Banner",
+                "index": "Banners"
+            },
+            "category":{
+                "new": "Nova Categoria",
+                "edit": "Editar Categoria",
+                "show": "Categoria",
+                "index": "Categorias"
+            },
+            "content":{
+                "new": "Novo Conteúdo",
+                "edit": "Editar Conteúdo",
+                "show": "Conteúdo",
+                "index": "Conteúdos"
+            }
+        },
+        "buttons":{
+            "back": "Voltar",
+            "register": "Registrar",
+            "login": "Entrar",
+            "create": "Criar",
+            "update": "Atualizar",
+            "new": "Novo",
+            "new_a": "Nova",
+            "edit": "Editar",
+            "save": "Salvar",
+            "cancel": "Cancelar",
+            "logout": "Logout",
+            "add": "Adicionar"
+        },
         "home": {
+            "searchBar": "Buscar",
             "formLogin": {
                 "title": "Login",
                 "login": "Usuario",
@@ -12,6 +52,16 @@
                 "title": "Registrar",
                 "button": "Registrar",
                 "toLogin": "Logar"
+            },
+            "menu": {
+                "animes": "Animes",
+                "mangas": "Mangas",
+                "series": "Séries",
+                "films": "Filmes",
+                "doramas": "Doramas",
+                "page": "AnimaFile",
+                "login": "Entrar",
+                "logout": "Logout"
             }
         },
         "login": {
@@ -20,34 +70,74 @@
         },
         "user": {
             "navbar": {
+                "notebook": "Agenda",
                 "dashboard": "Dashboard",
+                "banners": "Banners",
                 "categories": "Categorias",
-                "stamps": "Marcas",
-                "products": "Produtos",
+                "contents": "Conteúdos",
                 "account": "Minha conta",
-                "layouts": "Layouts",
                 "logout": "Logout"
             }
         },
         "models":{
+            "names": {
+                "banner": "Banner",
+                "category": "Categoria",
+                "content": "Conteúdo",
+                "user": "Usuário"
+            },
+            "banner":{
+                "title": "Titulo",
+                "image": "Capa",
+                "active": "Ativa",
+                "description": "Descrição",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização",
+                "errors": {
+                    "imageUploadJPG": "não é uma arquivo JPG"
+                }
+            },
+            "category":{
+                "name": "Nome",
+                "description": "Descrição",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização"
+            },
+            "content": {
+                "name": "Nome",
+                "slug": "Slug",
+                "author": "Autor",
+                "image": "Capa",
+                "publishDate": "Data de publicação",
+                "visible": "Visível",
+                "complete": "Completo",
+                "type": "Tipo",
+                "types": {
+                    "anime": "Anime",
+                    "manga": "Manga",
+                    "film": "Filme",
+                    "serie": "Série",
+                    "dorama": "Dorama"
+                },
+                "chapters": "Capítulos",
+                "description": "Descrição",
+                "categories": "Categorias",
+                "createDate": "Data de criação",
+                "updateDate": "Data de atualização"
+            },
             "user": {
                 "login": "Usuario",
                 "email": "Email",
                 "password": "Senha",
                 "passwordConfirmation": "Verificar senha",
+                "createDate": "Data de criação",
+                "loginHistory": {
+                    "date": "Data",
+                    "userAgent": "User agent",
+                    "ip": "IP"
+                },
                 "info": {
-                    "name": "Nome",
-                    "birth": "Nascimento",
-                    "cpf_cnpj": ["CPF", "CNPJ"],
-                    "documentType": "Dipo de Documento",
-                    "address": {
-                        "street": "Logradouro",
-                        "district": "Bairro",
-                        "city": "Cidade",
-                        "state": "Estado",
-                        "zipcode": "CEP",
-                        "country": "País"
-                    }
+                    "name": "Nome"
                 }
             }
         }

@@ -32,7 +32,7 @@ class Form extends Component {
                                     <label className="">
                                         {this.props.t.models.banner.image} <label htmlFor="file-chooser" className="pointer"><FontAwesomeIcon icon={faUpload} width='1rem' /></label>
                                     </label>
-                                    <img width="100%" src={`${banner.image}`} alt="Fazer Upload" />
+                                    <img id="banner-image-view" width="100%" src={`${banner.image}`} alt="Fazer Upload" />
                                 </div>
                                 <div className="d-none">
                                     <Text className="" id="file-chooser" container="banner-image" type="file" accept=".jpg, .jpeg, .png"></Text>

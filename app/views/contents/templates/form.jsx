@@ -45,6 +45,7 @@ class Form extends Component {
                         <div className="row">
                             <div className="column">
                                 <h2>{this.props.title}</h2>
+                                <h3>|{content.slug}|</h3>
                             </div>
                         </div>
                         <div className="row">
@@ -53,7 +54,7 @@ class Form extends Component {
                                     <label className="">
                                         {this.props.t.models.content.image} <label htmlFor="file-chooser" className="pointer"><FontAwesomeIcon icon={faUpload} width='1rem' /></label>
                                     </label>
-                                    <img width="100%" src={`${content.image}`} alt="Fazer Upload" />
+                                    <img id="content-image-view" width="100%" src={`${content.image}`} alt="Fazer Upload" />
                                 </div>
                                 <div className="d-none">
                                     <Text className="" id="file-chooser" container="content-image" type="file" accept=".jpg, .jpeg, .png"></Text>

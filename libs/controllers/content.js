@@ -47,7 +47,7 @@ module.exports = {
         req.body.content.updateDate = new Date()
         req.body.content.categories.splice(0, 1)
 
-        ContentModel.findOneAndUpdate({ _id: req.params._id }, req.body.content, (err, content) => {
+        ContentModel.updateOne({ _id: req.params._id }, req.body.content, (err, content) => {
             req.body.content.updateDate = new Date()
             if (err) res.render('contents/edit', { t: res.__('translate'), session: req.session, content: content, message: "Lorem" })
             else res.send(sendRedirect(`/u/content/${content._id}`, { title: "Lorem", icon: "success" }))
@@ -61,18 +61,34 @@ module.exports = {
             res.render('contents/show', { t: res.__('translate'), session: req.session, content: content, categories: categories })
         })
     },
-    view: async (req, res) => {
-        ContentModel.find({ type: req.params.type, visible: true }, async (err, contents) => {
-            let category_ids = []
-            let categories = []
-            for (let i = 0; i < contents.length; i += 1) {
-                for (let j = 0; j < contents[i].categories.length; j += 1) {
-                    if (!category_ids.includes(contents[i].categories[j]))
-                        category_ids.push(contents[i].categories[j])
+    NoAuth: {
+        index: async (req, res) => {
+            ContentModel.find({ type: req.params.type, visible: true }, async (err, contents) => {
+                let category_ids = []
+                let categories = []
+                for (let i = 0; i < contents.length; i += 1) {
+                    for (let j = 0; j < contents[i].categories.length; j += 1) {
+                        if (!category_ids.includes(contents[i].categories[j]))
+                            category_ids.push(contents[i].categories[j])
+                    }
                 }
-            }
-            if(category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
-            res.render('contents/noAuth/view', { t: res.__('translate'), contents: contents, categories: categories, session: req.session })
-        })
-    }
+                if(category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
+                res.render('contents/noAuth/index', { t: res.__('translate'), contents: contents, categories: categories, session: req.session })
+            })
+        },
+        view: async (req, res) => {
+            ContentModel.find({ type: req.params.type, visible: true }, async (err, contents) => {
+                let category_ids = []
+                let categories = []
+                for (let i = 0; i < contents.length; i += 1) {
+                    for (let j = 0; j < contents[i].categories.length; j += 1) {
+                        if (!category_ids.includes(contents[i].categories[j]))
+                            category_ids.push(contents[i].categories[j])
+                    }
+                }
+                if(category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
+                res.render('contents/noAuth/view', { t: res.__('translate'), contents: contents, categories: categories, session: req.session })
+            })
+        }
+    },
 }

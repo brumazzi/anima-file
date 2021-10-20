@@ -31,6 +31,7 @@ const CONTENT_SCHEMA = new Schema({
     complete: {type: Boolean, default: false},
     image: {type: String, required: false},
     type: {type: String, required: true},
+    slug: {type: String, required: true},
     chapters: {type: Number},
     description: {type: String},
     categories: [{type: ObjectId, ref: 'category'}],

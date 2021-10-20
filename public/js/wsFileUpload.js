@@ -1,5 +1,3 @@
-var global = null;
-
 function uploadFileInit(container) {
     var fileInputs = container.querySelectorAll("[type='file']");
     for (var i = 0; i < fileInputs.length; i += 1) {
@@ -19,8 +17,11 @@ function uploadFileInit(container) {
 
                 fileReader.addEventListener('load', function (evt) {
                     var socket = evt.target.socket;
+                    var UKEY = document.querySelector("meta[name='WSCONNECTION']").getAttribute("value");
 
-                    socket.send(evt.target.result);
+                    socket.send(UKEY);
+                    document.querySelector('#' + socket.container).value = '';
+                    document.querySelector('#' + socket.container + '-view').setAttribute('src', '');
                 });
 
                 socket.addEventListener('error', function (evt) {
@@ -29,13 +30,23 @@ function uploadFileInit(container) {
 
                 socket.addEventListener('message', function (evt) {
                     var data = JSON.parse(evt.data)
-                    if (data.fileName) {
-                        document.querySelector('#' + socket.container).value = data.fileName;
-                        toast({ title: 'file has uploaded.', icon: 'success' });
+                    if (data.type == 'access') {
+                        if (!data.success) {
+                            toast({ title: 'File can\'t be send' })
+                            socket.close();
+                        }else{
+                            socket.send(evt.target.fileReader.result);
+                        }
                     } else {
-                        toast({ title: data.error });
+                        if (data.fileName) {
+                            document.querySelector('#' + socket.container).value = data.fileName;
+                            document.querySelector('#' + socket.container + '-view').setAttribute('src', data.fileName);
+                            toast({ title: 'file has uploaded.', icon: 'success' });
+                        } else {
+                            toast({ title: data.error });
+                        }
+                        socket.close();
                     }
-                    socket.close();
                 });
 
                 socket.addEventListener('open', function (evt) {

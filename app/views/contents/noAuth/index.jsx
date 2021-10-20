@@ -2,7 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import Card from '../templates/card'
 
-class View extends Component {
+class List extends Component {
     constructor(props) {
         super(props)
         this.props = props
@@ -30,4 +30,4 @@ class View extends Component {
     }
 }
 
-export default View
+export default List

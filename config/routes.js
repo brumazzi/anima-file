@@ -17,7 +17,8 @@ noAuthRoutes.get('/register', Controllers.Home.register)
 noAuthRoutes.post('/login', Midware.userAuthenticate)
 noAuthRoutes.post('/register', Midware.userRegistrate)
 
-noAuthRoutes.get('/c/:type', Controllers.Content.view)
+noAuthRoutes.get('/c/:type', Controllers.Content.NoAuth.index)
+noAuthRoutes.get('/c/:slug', Controllers.Content.NoAuth.view)
 // noAuthRoutes.get(/\/c\/.+/, (req, res)=>{res.send(`<render dest="#none"><script type="text/javascript" command="alert({title: 'Página em construção', icon: 'error'})" /></render>`)})
 
 userRoutes.use(/\/u?.+/, Midware.onlyJSON, Midware.isUserAuthenticated)
