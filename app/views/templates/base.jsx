@@ -37,9 +37,12 @@ class Base extends Component {
                     <link rel="stylesheet" href="/plugins/global/seven.css" crossOrigin="anonymous" />
                     <link rel="stylesheet" href="/css/sweetalert2.min.css" crossOrigin="anonymous" />
                     <link rel="stylesheet" href="/css/base.css" crossOrigin="anonymous" />
-                    <script src="/js/sweetalert2.min.js"></script>
-                    <script src="/js/renderRoutes.js"></script>
-                    <script src="/js/wsFileUpload.js"></script>
+                    <link rel="stylesheet" type="text/css" href="/css/jstable.css" />
+
+                    <script src="/js/jstable.min.js"></script>
+                    <script type="text/javascript" src="/js/sweetalert2.min.js"></script>
+                    <script type="text/javascript" src="/js/renderRoutes.js"></script>
+                    <script type="text/javascript" src="/js/wsFileUpload.js"></script>
                 </head>
                 <body id="kt_body" className="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled">
                     <div className="d-flex flex-column flex-root">

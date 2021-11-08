@@ -38,8 +38,8 @@ class Table extends Component{
         }
 
         return(
-            <table className="table table-striped gy-3 gs-7">
-                <thead>
+            <table className="table table-striped gy-3 gs-7" id={this.props.id}>
+                <thead className="border-bottom-3 fw-bold">
                     <tr>
                         {(legend || fields || []).map((value)=>{return(<th key={value}>{value}</th>)})}
                     </tr>
@@ -47,7 +47,7 @@ class Table extends Component{
                 <tbody>
                     {items}
                 </tbody>
-                <tfoot>
+                <tfoot className="border-top-3 fw-bold">
                     <tr>
                         <td colSpan={fields.length}>{footer}</td>
                     </tr>

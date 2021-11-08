@@ -3,6 +3,7 @@ import { Component } from 'react'
 
 import NavBar from './templates/navbar'
 import Header from './templates/header'
+import ProgressCard from '../components/progressCard'
 
 class Index extends Component {
     constructor(props) {
@@ -15,19 +16,14 @@ class Index extends Component {
         return (
             <render>
                 <content dest="#main">
-                    <div className="row">
-                        <div className="col">
-                            <div className="groupbox">
-                                <span className="groupbox-item">0</span>
-                                <span className="groupbox-item">1</span>
-                                <span className="groupbox-item">2</span>
-                            </div>
+                    <h2>Dashboard</h2>
+                    <div className="row justify-content-sm-center">
+                        <div className="col-sm-3">
                         </div>
                     </div>
                 </content>
                 <NavBar t={this.props.t} user={this.user}></NavBar>
-                <Header t={this.props.t} user={this.user}>
-                </Header>
+                <Header t={this.props.t} user={this.user}></Header>
             </render>
         )
     }

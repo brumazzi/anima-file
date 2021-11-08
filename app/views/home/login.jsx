@@ -4,7 +4,7 @@ import { Component } from 'react'
 import Text from '../components/inputs/text'
 import NavBar from './templates/navbar'
 
-class FormLogin extends Component {
+class Login extends Component {
     constructor(props) {
         super(props)
         this.props = props
@@ -32,12 +32,12 @@ class FormLogin extends Component {
                         </div>
                     </div>
                 </content>
-                <NavBar t={this.props.t}></NavBar>
+                {/* <NavBar t={this.props.t}></NavBar> */}
                 {/* <listener action="click" callback="sendAlert" target="#h3" /> */}
             </render>
         )
     }
 }
 
-export default FormLogin
+export default Login
 

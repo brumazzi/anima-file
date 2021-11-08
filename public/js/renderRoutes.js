@@ -164,6 +164,10 @@ function toast(args) {
 
 function applyJSFunction(content){
     uploadFileInit(content);
+    var tables = content.querySelectorAll('table');
+    for(var i=0; i<tables.length; i+=1){
+        new JSTable(tables[i]);
+    }
 }
 
 window.addEventListener("load", function () {

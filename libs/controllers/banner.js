@@ -22,7 +22,7 @@ module.exports = {
         BannerModel.findOneAndUpdate({ _id: req.params._id }, req.body.banner, (err, banner) => {
             req.body.banner.updateDate = new Date()
             if (err) res.render('banners/edit', { t: res.__('translate'), session: req.session, banner: banner, message: "Lorem" })
-            else res.send(sendRedirect(`/u/banner/${banner._id}`, { title: "Lorem", icon: "success" }))
+            else res.send(sendRedirect(`/u/banner/${req.params._id}`, { title: "Lorem", icon: "success" }))
         })
     },
     edit: async (req, res) => {

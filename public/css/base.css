@@ -52,3 +52,12 @@ table tbody tr:hover {
 
 .pointer {
   cursor: pointer; }
+
+table thead, table tfoot {
+  border-color: #9b74ff;
+  background-color: #ccbafc; }
+
+table tbody tr {
+  background-color: #ffffff; }
+  table tbody tr:hover {
+    background-color: #d0bdff; }

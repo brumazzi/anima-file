@@ -4,7 +4,7 @@ import { Component } from 'react'
 import Text from '../components/inputs/text'
 import NavBar from './templates/navbar'
 
-class Index extends Component {
+class Register extends Component {
     constructor(props) {
         super(props)
         this.props = props
@@ -45,10 +45,10 @@ class Index extends Component {
                         </div>
                     </div>
                 </content>
-                <NavBar t={this.props.t}></NavBar>
+                {/* <NavBar t={this.props.t}></NavBar> */}
             </render>
         )
     }
 }
 
-export default Index;
+export default Register;

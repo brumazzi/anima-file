@@ -45,7 +45,6 @@ class Form extends Component {
                         <div className="row">
                             <div className="column">
                                 <h2>{this.props.title}</h2>
-                                <h3>|{content.slug}|</h3>
                             </div>
                         </div>
                         <div className="row">
