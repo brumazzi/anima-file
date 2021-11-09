@@ -24,7 +24,7 @@ class Index extends Component {
                 <NavBar t={this.props.t} user={this.user}></NavBar>
                 <Header t={this.props.t} user={this.user}></Header>
                 <content dest=".pageTitle">
-                    /Lorem
+                    /{this.props.t.titles.dashboard.index}
                 </content>
             </render>
         )

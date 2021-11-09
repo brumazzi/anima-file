@@ -3,7 +3,8 @@
         "text": {
             "title": "AnimaFile",
             "yes": "Sim",
-            "no": "Não"
+            "no": "Não",
+            "all": "Tudo"
         },
         "titles": {
             "banner":{
@@ -23,6 +24,9 @@
                 "edit": "Editar Conteúdo",
                 "show": "Conteúdo",
                 "index": "Conteúdos"
+            },
+            "dashboard":{
+                "index": "Dashboard"
             }
         },
         "buttons":{
@@ -37,7 +41,8 @@
             "save": "Salvar",
             "cancel": "Cancelar",
             "logout": "Logout",
-            "add": "Adicionar"
+            "add": "Adicionar",
+            "find": "Buscar"
         },
         "home": {
             "searchBar": "Buscar",

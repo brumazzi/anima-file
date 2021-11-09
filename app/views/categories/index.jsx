@@ -14,22 +14,23 @@ class Index extends Component{
     }
 
     render() {
+        let t = this.props.t.models.category
         return(
             <render>
                 <content dest="#main">
                     <div className="row">
                         <div className="column">
-                            <h2>{this.props.t.titles.category.index}</h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="column">
                             <Table
-                                legend={['Nome', 'Descrição']}
+                                legend={[t.name, t.description]}
                                 fields={['name', 'description']}
                                 data={this.props.categories}
                                 link="/u/category/:_id"
                                 linkIndex="0"
+                                paginate={true}
+                                pageParams={{
+                                    perPage: this.props.perPage,
+                                    pageIndex: this.props.pageIndex
+                                }}
                                 footer="Lorem ipsum"/>
                         </div>
                     </div>
@@ -45,7 +46,7 @@ class Index extends Component{
                     </div>
                 </content>
                 <content dest=".pageTitle">
-                    /Lorem
+                    /{this.props.t.titles.category.index}
                 </content>
             </render>
         )

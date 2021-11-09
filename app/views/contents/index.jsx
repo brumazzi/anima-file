@@ -27,11 +27,6 @@ class Index extends Component {
                 <content dest="#main">
                     <div className="row">
                         <div className="col-sm-12">
-                            <h2>{this.props.t.titles.content.index}</h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-sm-12">
                             <Table
                                 id="content-table"
                                 legend={[t.name, t.type, t.chapters, t.publishDate, t.complete]}
@@ -39,6 +34,11 @@ class Index extends Component {
                                 data={contents}
                                 link="/u/content/:_id"
                                 linkIndex="0"
+                                paginate={true}
+                                pageParams={{
+                                    perPage: this.props.perPage,
+                                    pageIndex: this.props.pageIndex
+                                }}
                                 footer="Conteudo de rodapé" />
                         </div>
                     </div>
@@ -56,7 +56,7 @@ class Index extends Component {
                 </content>
 
                 <content dest=".pageTitle">
-                    /Lorem
+                    /{this.props.t.titles.content.index}
                 </content>
             </render>
         )

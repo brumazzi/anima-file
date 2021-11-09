@@ -15,22 +15,23 @@ class Index extends Component {
     }
 
     render() {
+        let t = this.props.t.models.banner
         return (
             <render>
                 <content dest="#main">
                     <div className="row">
-                        <div className="col-auto">
-                            <h2>{this.props.t.titles.banner.index}</h2>
-                        </div>
-                    </div>
-                    <div className="row">
                         <div className="col-sm-12">
                             <Table
-                                legend={['Lorem', 'Lorem']}
+                                legend={[t.title, t.description]}
                                 fields={['title', 'description']}
                                 data={this.props.banners}
                                 link="/u/banner/:_id"
                                 linkIndex="0"
+                                paginate={true}
+                                pageParams={{
+                                    perPage: this.props.perPage,
+                                    pageIndex: this.props.pageIndex
+                                }}
                                 footer="Lorem ipsum" />
                         </div>
                     </div>
@@ -46,7 +47,7 @@ class Index extends Component {
                     </div>
                 </content>
                 <content dest=".pageTitle">
-                    /Lorem
+                    /{this.props.t.titles.banner.index}
                 </content>
             </render>
         )
