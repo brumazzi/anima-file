@@ -16,7 +16,6 @@ class Index extends Component {
         return (
             <render>
                 <content dest="#main">
-                    <h2>Dashboard</h2>
                     <div className="row justify-content-sm-center">
                         <div className="col-sm-3">
                         </div>
@@ -24,6 +23,9 @@ class Index extends Component {
                 </content>
                 <NavBar t={this.props.t} user={this.user}></NavBar>
                 <Header t={this.props.t} user={this.user}></Header>
+                <content dest=".pageTitle">
+                    /Lorem
+                </content>
             </render>
         )
     }

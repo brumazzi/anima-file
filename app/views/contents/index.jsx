@@ -1,15 +1,15 @@
 import React from 'react'
-import {Component} from 'react'
+import { Component } from 'react'
 
 import Table from '../components/table'
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faArchive, faImage, faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArchive, faImage, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import Paginate from '../components/paginate'
 import Filter from './templates/filter'
 
-class Index extends Component{
-    constructor(props){
+class Index extends Component {
+    constructor(props) {
         super(props)
         this.props = props
         this.user = props.session.user
@@ -20,11 +20,11 @@ class Index extends Component{
         let contents = this.props.contents
         let perPage = this.props.perPage || 10
         let pageIndex = this.props.pageIndex || 1
-        for(let i=0; i<contents.length; i+=1){
+        for (let i = 0; i < contents.length; i += 1) {
             contents[i].typeString = this.props.t.models.content.types[contents[i].type]
         }
 
-        return(
+        return (
             <render>
                 <content dest="#main">
                     <div className="row">
@@ -41,7 +41,7 @@ class Index extends Component{
                                 data={contents}
                                 link="/u/content/:_id"
                                 linkIndex="0"
-                                footer="Conteudo de rodapé"/>
+                                footer="Conteudo de rodapé" />
                         </div>
                     </div>
                 </content>
@@ -55,6 +55,10 @@ class Index extends Component{
                             <FontAwesomeIcon icon={faSignOutAlt} width="1.5rem" /> {this.props.t.buttons.logout}
                         </a>
                     </div>
+                </content>
+
+                <content dest=".pageTitle">
+                    /Lorem
                 </content>
             </render>
         )

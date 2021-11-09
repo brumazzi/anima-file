@@ -102,6 +102,9 @@ class Show extends Component {
                         </a>
                     </div>
                 </content>
+                <content dest=".pageTitle">
+                    /Lorem
+                </content>
             </render>
         )
     }

@@ -51,7 +51,7 @@ class Header extends Component {
                         </span>
                     </div>
                 </div>
-                <form className="text-dark d-flex flex-row align-items-center">
+                {/* <form className="text-dark d-flex flex-row align-items-center">
                     <div className="input-group input-group-sm">
                         <input type="search" className="form-control" placeholder={this.props.t.home.searchBar}></input>
                         <span className="input-group-text">
@@ -60,7 +60,7 @@ class Header extends Component {
                             </button>
                         </span>
                     </div>
-                </form>
+                </form> */}
                 {loginButtons}
 
             </content>

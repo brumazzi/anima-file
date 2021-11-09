@@ -3,7 +3,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { Component } from 'react'
 
-class Card extends Component{
+class Card extends Component {
 
     constructor(props) {
         super(props)
@@ -16,17 +16,22 @@ class Card extends Component{
         return (
             <div className="card card-px-0">
                 <div className="card-header overflow-hidden">
-                    <img src={content.image} alt="" width="100%" style={{border: 'none'}} />
+                    <img src={content.image} alt="" width="100%" style={{ border: 'none' }} />
                 </div>
-                <div className="card-body px-2">
+                <div className="card-body px-2 py-2" style={{ height: '6rem', overflow: 'hidden' }}>
                     <p>{content.description}</p>
                 </div>
-                <div className="card-footer px-2">
-                    <div className="d-flex flex-column align-items-end">
-                        <div className="d-flex ms-3">
-                            <button className="btn btn-sm btn-active-primary btn-light-primary ms-3" title={this.props.t.buttons.add}>
-                                <FontAwesomeIcon icon={faPlus} width="1.5rem"></FontAwesomeIcon>
-                            </button>
+                <div className="card-footer px-3 py-3">
+                    <div className="row">
+                        <div className="col-sm-6 align-items-end text-begin">
+                            <small className="fw-bold text-secondary">
+                                {content.publishDate.toLocaleString().slice(0, 10)}
+                            </small>
+                        </div>
+                        <div className="col-sm-6 align-items-end text-end">
+                            <a href="#" className="btn-active-primary btn-light-primary mx-3" title={this.props.t.buttons.add}>
+                                <FontAwesomeIcon icon={faPlus} width="1.0rem"></FontAwesomeIcon>
+                            </a>
                         </div>
                     </div>
                 </div>

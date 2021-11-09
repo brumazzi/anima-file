@@ -19,7 +19,7 @@ class Header extends Component {
                 {accessor}
                 <div className="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
                     <h1 className="text-dark fw-bold my-0 fs-2 d-flex">
-                        <a href="/home">{this.props.t.text.title}</a>
+                        <a href="/home">{this.props.t.text.title}</a>&nbsp;<span className="h3 pageTitle"></span>
                     </h1>
                 </div>
                 <div className="d-flex d-lg-none align-items-center ms-n2 me-2">
@@ -32,7 +32,7 @@ class Header extends Component {
                         </span>
                     </div>
                 </div>
-                <form className="text-dark d-flex flex-row align-items-center">
+                {/* <form className="text-dark d-flex flex-row align-items-center">
                     <div className="input-group input-group-sm">
                         <input className="form-control" placeholder={this.props.t.home.searchBar}></input>
                         <span className="input-group-text">
@@ -41,7 +41,7 @@ class Header extends Component {
                             </button>
                         </span>
                     </div>
-                </form>
+                </form> */}
                 <div id="btnGroup" className="d-flex flex-shrink-0">
                     <div className="d-flex ms-3">
                         <a href="/u/dashboard" id="" method="GET" className="btn bg-body btn-color-gray-600 btn-active-info ms-3">
