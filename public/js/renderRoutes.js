@@ -164,10 +164,12 @@ function toast(args) {
 
 function applyJSFunction(content){
     uploadFileInit(content);
-    var tables = content.querySelectorAll('table');
-    for(var i=0; i<tables.length; i+=1){
-        new JSTable(tables[i]);
-    }
+    // var tables = content.querySelectorAll('table');
+    // for(var i=0; i<tables.length; i+=1){
+    //     new JSTable(tables[i]);
+    // }
+    // var anchors = content.getElementsByTagName('a');
+    // for (var j = 0; j < anchors.length; j += 1) anchorAddRedirectEvent(anchors[j]);
 }
 
 window.addEventListener("load", function () {

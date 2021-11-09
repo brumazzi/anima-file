@@ -19,14 +19,14 @@ class Select extends Component{
                 let group = item
                 let groupItems = new Array()
                 for(let j=0; j<group.items.length; j+=1){
-                    if(this.props.selected == group.items[j].value)
+                    if(this.props.selected === group.items[j].value)
                         groupItems.push(<option key={this.key++} value={group.items[j].value} selected>{group.items[j].label}</option>)
                     else
                         groupItems.push(<option key={this.key++} value={group.items[j].value}>{group.items[j].label}</option>)
                 }
                 selectOptions.push(<optgroup key={this.key++} label={group.label}>{groupItems}</optgroup>)
             }else{
-                if(this.props.selected == item.value)
+                if(this.props.selected === item.value)
                     selectOptions.push(<option key={this.key++} value={item.value} selected>{item.label}</option>)
                 else
                     selectOptions.push(<option key={this.key++} value={item.value}>{item.label}</option>)

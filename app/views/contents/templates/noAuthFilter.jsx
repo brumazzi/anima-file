@@ -10,7 +10,7 @@ class NoAuthFilter extends Component {
     constructor(props) {
         super(props)
         this.props = props
-        this.params = this.props.params
+        this.params = this.props.params || {}
     }
 
     render() {

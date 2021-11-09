@@ -76,7 +76,7 @@ class Show extends Component {
                 <content dest=".pageTitle">
                     /Lorem
                 </content>
-                <listener action="change" callback="(evt)=>{document.getElementById('changeStatus').submit()}" target="#banner-active" />
+                {/* <listener action="change" callback="(evt)=>{document.getElementById('changeStatus').submit()}" target="#banner-active" /> */}
             </render>
         )
     }

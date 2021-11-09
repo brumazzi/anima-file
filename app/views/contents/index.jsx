@@ -5,8 +5,6 @@ import Table from '../components/table'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArchive, faImage, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
-import Paginate from '../components/paginate'
-import Filter from './templates/filter'
 
 class Index extends Component {
     constructor(props) {

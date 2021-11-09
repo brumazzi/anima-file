@@ -63,7 +63,16 @@ module.exports = {
     },
     NoAuth: {
         index: async (req, res) => {
-            ContentModel.find({ type: req.params.type, visible: true }, async (err, contents) => {
+            let findParams = {
+                type: req.params.type,
+                visible: true
+            }
+            if (req.body.content) {
+                if (req.body.content.complete === 'true') findParams.complete = true
+                else if (req.body.content.complete === 'false') findParams.complete = false
+                if (req.body.content.name) findParams.name = new RegExp(req.body.content.name, 'i')
+            }
+            ContentModel.find(findParams, async (err, contents) => {
                 let category_ids = []
                 let categories = []
                 for (let i = 0; i < contents.length; i += 1) {
@@ -72,8 +81,8 @@ module.exports = {
                             category_ids.push(contents[i].categories[j])
                     }
                 }
-                if(category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
-                res.render('contents/noAuth/index', { t: res.__('translate'), contents: contents, categories: categories, session: req.session })
+                if (category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
+                res.render('contents/noAuth/index', { t: res.__('translate'), contents: contents, categories: categories, session: req.session, type: req.params.type, params: req.body.content })
             })
         },
         view: async (req, res) => {
@@ -86,7 +95,7 @@ module.exports = {
                             category_ids.push(contents[i].categories[j])
                     }
                 }
-                if(category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
+                if (category_ids.length > 0) categories = await CategoryModel.find({ _id: category_ids })
                 res.render('contents/noAuth/view', { t: res.__('translate'), contents: contents, categories: categories, session: req.session })
             })
         }

@@ -19,6 +19,7 @@ class Card extends Component {
                     <img src={content.image} alt="" width="100%" style={{ border: 'none' }} />
                 </div>
                 <div className="card-body px-2 py-2" style={{ height: '6rem', overflow: 'hidden' }}>
+                    <h4>{content.name}</h4>
                     <p>{content.description}</p>
                 </div>
                 <div className="card-footer px-3 py-3">
