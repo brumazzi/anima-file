@@ -28,10 +28,12 @@ class Index extends Component {
                                 link="/u/banner/:_id"
                                 linkIndex="0"
                                 paginate={true}
+                                filterField="title"
                                 pageParams={{
                                     perPage: this.props.perPage,
                                     pageIndex: this.props.pageIndex
                                 }}
+                                t={this.props.t}
                                 footer="Lorem ipsum" />
                         </div>
                     </div>

@@ -27,10 +27,13 @@ class Index extends Component{
                                 link="/u/category/:_id"
                                 linkIndex="0"
                                 paginate={true}
+                                filterField="name"
                                 pageParams={{
                                     perPage: this.props.perPage,
-                                    pageIndex: this.props.pageIndex
+                                    pageIndex: this.props.pageIndex,
+                                    actionURL: '/u/categories/'
                                 }}
+                                t={this.props.t}
                                 footer="Lorem ipsum"/>
                         </div>
                     </div>

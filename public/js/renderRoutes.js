@@ -1,7 +1,18 @@
 var REQUEST_COUNT = 0;
+var CURRENT_PAGE = function(){return localStorage.getItem("currentPage");}
+var afterRenderActions = new Array();
+
 function requestShowSpinner() {
     if (REQUEST_COUNT != 0) document.body.setAttribute('data-spinner', 'true');
     else document.body.setAttribute('data-spinner', 'false');
+}
+
+function elementFindParent(container, parentClass){
+    do{
+        container = container.parentNode
+        if(container.getAttribute('class').match(parentClass.replace('.',''))) return container;
+    }while(container);
+    return null;
 }
 
 function requestRender(requestData) {
@@ -37,8 +48,10 @@ function requestRender(requestData) {
         }
     } catch (error) {
         console.log(error);
+        return false;
     }
     for (var i = 0; i < scriptList.length; i += 1) scriptCall(scriptList[i]);
+    return true;
 }
 
 function requestPage(method, url, data = {}) {
@@ -58,7 +71,9 @@ function requestPage(method, url, data = {}) {
 
     httpRequest.onreadystatechange = function (request) {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) requestRender(httpRequest.responseText);
+            if (httpRequest.status === 200 && requestRender(httpRequest.responseText)){
+                if (method == "GET") localStorage.setItem("currentPage", url.replace(/\?.+/,''));
+            }
         }
     }
 
@@ -69,12 +84,12 @@ function requestPage(method, url, data = {}) {
     httpRequest.setRequestHeader('Content-Type', 'application/json');
     httpRequest.send(JSON.stringify(data));
 
-    if (method == "GET") {
-        localStorage.setItem('lastURL', JSON.stringify({
-            method: method,
-            url: url
-        }));
-    }
+    // if (method == "GET") {
+    //     localStorage.setItem('lastURL', JSON.stringify({
+    //         method: method,
+    //         url: url
+    //     }));
+    // }
 
     var interval = setInterval(function () {
         httpRequest.abort();
@@ -162,8 +177,15 @@ function toast(args) {
     mixin.fire(args);
 }
 
+function addAfterRenderAction(callback){
+    afterRenderActions.push(callback);
+}
+
 function applyJSFunction(content){
     uploadFileInit(content);
+    for(var i=0; i< afterRenderActions.length; i+=1){
+        afterRenderActions[i](content);
+    }
     // var tables = content.querySelectorAll('table');
     // for(var i=0; i<tables.length; i+=1){
     //     new JSTable(tables[i]);

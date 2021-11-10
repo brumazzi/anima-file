@@ -43,6 +43,7 @@ class Base extends Component {
                     <script type="text/javascript" src="/js/sweetalert2.min.js"></script>
                     <script type="text/javascript" src="/js/renderRoutes.js"></script>
                     <script type="text/javascript" src="/js/wsFileUpload.js"></script>
+                    <script type="text/javascript" src="/js/functions.js"></script>
                 </head>
                 <body id="kt_body" className="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-disabled">
                     <div className="d-flex flex-column flex-root">

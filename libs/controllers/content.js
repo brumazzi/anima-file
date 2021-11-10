@@ -4,7 +4,13 @@ const { sendRedirect, sendError } = require('../auth')
 
 module.exports = {
     index: async (req, res) => {
-        ContentModel.find({}, (err, contents) => {
+        let filter = {}
+        if (req.query.search) {
+            filter = {
+                name: new RegExp(req.query.name, 'i')
+            }
+        }
+        ContentModel.find(filter, (err, contents) => {
             res.render('contents/index', { t: res.__('translate'), session: req.session, contents: contents })
         })
     },

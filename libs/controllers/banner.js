@@ -3,7 +3,13 @@ const { sendRedirect, sendError } = require('../auth')
 
 module.exports = {
     index: async (req, res) => {
-        BannerModel.find({}, (err, banners) => {
+        let filter = {}
+        if (req.query.search) {
+            filter = {
+                title: new RegExp(req.query.title, 'i')
+            }
+        }
+        BannerModel.find(filter, (err, banners) => {
             res.render('banners/index', { t: res.__('translate'), session: req.session, banners: banners })
         })
     },

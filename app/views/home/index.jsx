@@ -8,6 +8,7 @@ import { faSearch, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid
 import NavBar from './templates/navbar'
 import Header from './templates/header'
 import Text from '../components/inputs/text'
+import Table from '../components/table'
 
 class Index extends Component {
     constructor(props) {

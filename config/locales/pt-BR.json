@@ -4,7 +4,8 @@
             "title": "AnimaFile",
             "yes": "Sim",
             "no": "Não",
-            "all": "Tudo"
+            "all": "Tudo",
+            "find": "Buscar"
         },
         "titles": {
             "banner":{

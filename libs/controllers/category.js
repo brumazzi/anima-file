@@ -3,8 +3,14 @@ const {sendRedirect, sendError} = require('../auth')
 
 module.exports = {
     index: async (req, res) => {
-        CategoryModel.find({}, (err, categories)=>{
-            res.render('categories/index', { t: res.__('translate'), session: req.session, categories: categories })
+        let filter = {}
+        if (req.query.search) {
+            filter = {
+                name: new RegExp(req.query.name, 'i')
+            }
+        }
+        CategoryModel.find(filter, (err, categories)=>{
+            res.render('categories/index', { t: res.__('translate'), session: req.session, categories: categories, pageIndex: req.query.index })
         })
     },
     new: async (req, res) => {
