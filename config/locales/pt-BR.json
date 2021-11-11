@@ -60,6 +60,7 @@
                 "toLogin": "Logar"
             },
             "menu": {
+                "home": "Inicio",
                 "animes": "Animes",
                 "mangas": "Mangas",
                 "series": "Séries",

@@ -38,7 +38,7 @@ class Header extends Component {
             <content dest="#kt_header_container">
                 <div className="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
                     <h1 className="text-dark fw-bold my-0 fs-2">
-                        <a href="/u/dashboard">{this.props.t.text.title}</a>
+                        <a href="/home">{this.props.t.text.title}</a>
                     </h1>
                 </div>
                 <div className="d-flex d-lg-none align-items-center ms-n2 me-2">

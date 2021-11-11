@@ -11,6 +11,9 @@ class NavBar extends Component {
         return (
             <content dest="#navbar">
                 <li className="nav-item mb-2">
+                    <a className="nav-link btn btn-custom" href="/home"><span>{this.props.t.home.menu.home}</span></a>
+                </li>
+                <li className="nav-item mb-2">
                     <a className="nav-link btn btn-custom" href="/c/anime"><span>{this.props.t.home.menu.animes}</span></a>
                 </li>
                 <li className="nav-item mb-2">

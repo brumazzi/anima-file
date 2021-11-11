@@ -22,14 +22,20 @@ class Index extends Component {
             <render>
                 <content dest="#main">
                     <Slider>
-                        <span>
+                        <span className="bg-secondary">
                             <h2>Novidades</h2>
                         </span>
-                        <span>
+                        <span className="bg-secondary">
                             <h2>Últimas historias</h2>
                         </span>
-                        <span>
+                        <span className="bg-secondary">
                             <h2>Mais Requeridos</h2>
+                        </span>
+                        <span className="bg-secondary">
+                            <h2>Proximas</h2>
+                        </span>
+                        <span className="bg-secondary">
+                            <h2>Ajude a plataforma</h2>
                         </span>
                     </Slider>
                 </content>

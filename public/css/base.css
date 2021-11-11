@@ -45,10 +45,16 @@ body[data-spinner=true]::before {
 table tbody tr:hover {
   background-color: #F8F5FF; }
 
-.slider {
-  display: block; }
-  .slider .slider-item {
-    display: inline-block; }
+.slider .slider-link {
+  display: block;
+  width: 18px;
+  height: 18px; }
+  .slider .slider-link.active {
+    background-color: #7239EA; }
+
+.slider .slider-content {
+  display: inline-block;
+  height: 300px; }
 
 .pointer {
   cursor: pointer; }

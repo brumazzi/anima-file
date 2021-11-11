@@ -1,5 +1,5 @@
 var REQUEST_COUNT = 0;
-var CURRENT_PAGE = function(){return localStorage.getItem("currentPage");}
+var CURRENT_PAGE = function () { return localStorage.getItem("currentPage"); }
 var afterRenderActions = new Array();
 
 function requestShowSpinner() {
@@ -7,11 +7,11 @@ function requestShowSpinner() {
     else document.body.setAttribute('data-spinner', 'false');
 }
 
-function elementFindParent(container, parentClass){
-    do{
+function elementFindParent(container, parentClass) {
+    do {
         container = container.parentNode
-        if(container.getAttribute('class').match(parentClass.replace('.',''))) return container;
-    }while(container);
+        if (container.getAttribute('class').match(parentClass.replace('.', ''))) return container;
+    } while (container);
     return null;
 }
 
@@ -71,8 +71,8 @@ function requestPage(method, url, data = {}) {
 
     httpRequest.onreadystatechange = function (request) {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200 && requestRender(httpRequest.responseText)){
-                if (method == "GET") localStorage.setItem("currentPage", url.replace(/\?.+/,''));
+            if (httpRequest.status === 200 && requestRender(httpRequest.responseText)) {
+                if (method == "GET") localStorage.setItem("currentPage", url.replace(/\?.+/, ''));
             }
         }
     }
@@ -109,7 +109,10 @@ function anchorAddRedirectEvent(element) {
         evt.preventDefault();
         var element = anchorFindUp(evt.target);
         var method = element.getAttribute("method") || "GET";
-        requestPage(method, element.getAttribute('href'));
+        var href = element.getAttribute('href');
+        if(href.charAt(0) == '#'){
+            element.toggleFocus();
+        }else requestPage(method, href);
     });
 }
 
@@ -177,15 +180,16 @@ function toast(args) {
     mixin.fire(args);
 }
 
-function addAfterRenderAction(callback){
+function addAfterRenderAction(callback) {
     afterRenderActions.push(callback);
 }
 
-function applyJSFunction(content){
+function applyJSFunction(content) {
     uploadFileInit(content);
-    for(var i=0; i< afterRenderActions.length; i+=1){
+    for (var i = 0; i < afterRenderActions.length; i += 1) {
         afterRenderActions[i](content);
     }
+
     // var tables = content.querySelectorAll('table');
     // for(var i=0; i<tables.length; i+=1){
     //     new JSTable(tables[i]);
@@ -212,3 +216,20 @@ window.addEventListener("load", function () {
     // }
 
 });
+
+// configure elements
+
+Element.prototype.getFocusElement = function(){
+    if(this.getAttribute('href')) return document.querySelector(this.getAttribute('href'));
+    return null;
+}
+
+Element.prototype.toggleFocus = function(){
+    var regexp = new RegExp('link-focus', 's')
+    var elements = document.querySelectorAll('.link-focus');
+    for(var i=0; i<elements.length; i+=1){
+        elements[i].classList.remove('link-focus')
+    }
+    var focusElement = this.getFocusElement();
+    focusElement.classList.add('link-focus')
+}
